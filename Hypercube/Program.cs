@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+
+using Database;
 
 namespace Hypercube
 {
-	static class Program
+		static class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
@@ -16,7 +19,14 @@ namespace Hypercube
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+
+			MainWindow mainWindow = new MainWindow();
+
+			DatabaseContent db = new DatabaseContent();
+			List<User> users = db.Users.ToList();
+			mainWindow.SetGridData(users);
+			
+			Application.Run(mainWindow);
 		}
 	}
 }
