@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Hypercube/obj/Debug
+/Hypercube/obj/Release
+/Hypercube/.vs/Hypercube/v16
+/Hypercube/bin/Debug
