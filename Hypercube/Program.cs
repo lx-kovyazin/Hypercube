@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
 
 using Database;
 
 namespace Hypercube
 {
-		static class Program
-	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-			MainWindow mainWindow = new MainWindow();
+            var mainWindow = new MainWindow();
+            var users = new DatabaseContent().Users.ToList();
+            mainWindow.SetGridData(users);
 
-			DatabaseContent db = new DatabaseContent();
-			List<User> users = db.Users.ToList();
-			mainWindow.SetGridData(users);
-			
-			Application.Run(mainWindow);
-		}
-	}
+            Application.Run(mainWindow);
+        }
+    }
 }
