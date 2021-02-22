@@ -3,9 +3,9 @@
 ################################################################################
 
 /.vs
-/Hypercube/obj/Debug
-/Hypercube/obj/Release
-/Hypercube/.vs/Hypercube/v16
-/Hypercube/bin/Debug
 /bin
+/Hypercube/obj
+/Hypercube/.vs
 /Hypercube/packages
+/AnalysisServicesTest/obj
+/AnalysisServicesTest/.vs
