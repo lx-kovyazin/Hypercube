@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,10 +18,14 @@ namespace Hypercube
             Application.SetCompatibleTextRenderingDefault(false);
 
             var mainWindow = new MainWindow();
-            var users = new DatabaseContent().Users.ToList();
-            mainWindow.SetGridData(users);
 
-            Application.Run(mainWindow);
+            using (var databaseContent = new DatabaseContent())
+            {
+                var users = databaseContent.Users.ToList();
+                mainWindow.SetGridData(users);
+
+                Application.Run(mainWindow);
+            }
         }
     }
 }

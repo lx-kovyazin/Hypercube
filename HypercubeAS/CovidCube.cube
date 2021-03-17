@@ -1,0 +1,771 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="07bb6beb-3e6f-4617-94bf-fe854b1fffab" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CovidCube</ID>
+  <Name>CovidCube</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11357" scrolltop="-2884" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="22225" y="14923" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="owid-covid-data" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="6324" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b418000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_owid-covid-data" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11357</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2884</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="59f48acf-718b-42d4-ae93-c439c0d18a9f">
+      <ID>Location</ID>
+      <Name>Location</Name>
+      <DimensionID>Location</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="766570ea-2b0a-44de-aacc-047ec7ddd423">
+          <AttributeID>Location Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d7b080b3-969f-4cb4-991e-2943e9497646">
+          <AttributeID>Iso Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c6f6b625-0106-4323-a083-6158b9036a8d">
+          <AttributeID>Continent</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8c951b8a-6a90-4612-a7de-d71288bfee5b">
+          <AttributeID>Location</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="37abcece-8b5a-4c10-81b6-0019cf04b12d">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="0df45ea0-34d9-4984-9955-6da03b94ab7b">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="c6f5abeb-ee35-4f4d-a3d7-8923f03f5cf4">
+      <ID>Date</ID>
+      <Name>Date</Name>
+      <DimensionID>Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e00047d8-90e9-4d62-92b3-f3219e39ec8d">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d1a864cc-f8f4-4faa-9819-01f4d978dc2c">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="e9faa772-3cc7-465b-a50f-fb35d7712032">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="22590019-dc98-4688-a108-2dc5a613fcad">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="500cc9c6-5257-4a91-a40a-c954e96fcade">
+      <ID>Owid-covid-data</ID>
+      <Name>Owid-covid-data</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1318b281-4086-48a3-aeb5-0db0b76d6ce0">
+          <ID>Total Cases</ID>
+          <Name>Total Cases</Name>
+          <Source dwd:design-time-name="dc99c95e-205a-41b9-98d6-44806fe41464">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3b50a4e9-f2f5-475a-a70b-8eb112e46335">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_cases</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f929dd63-db48-47a5-8f19-65c79974aff5">
+          <ID>New Cases</ID>
+          <Name>New Cases</Name>
+          <Source dwd:design-time-name="fcd9b51a-d5a9-4d4c-ac7e-9dec4379e3c9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="174d6b58-9ea5-481a-a6bc-dea885945cf8">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_cases</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4c3e8f13-80c7-421e-88cd-f2082f2a3750">
+          <ID>New Cases Smoothed</ID>
+          <Name>New Cases Smoothed</Name>
+          <Source dwd:design-time-name="d4d45a1c-1cfc-4d52-94da-19d813c5f514">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="89eb7cc1-e975-4894-9b67-dadbb7186254">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_cases_smoothed</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f7a67135-b6d4-4d33-b3a3-cbbbc2c09db5">
+          <ID>Total Deaths</ID>
+          <Name>Total Deaths</Name>
+          <Source dwd:design-time-name="c5463279-1269-48f2-b102-3e742024b90c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b6d1e3c1-ae71-495e-a0e5-8ee7e650dd1c">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_deaths</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8b495807-dcd5-4ccc-80b6-8488babccb22">
+          <ID>New Deaths</ID>
+          <Name>New Deaths</Name>
+          <Source dwd:design-time-name="56fcd93d-9a9d-4af1-8b49-a288c5a1814b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="030b2516-74ec-46ad-920e-6d470f4fa219">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_deaths</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bd7e7e3e-815c-4241-97da-27652d0390b9">
+          <ID>New Deaths Smoothed</ID>
+          <Name>New Deaths Smoothed</Name>
+          <Source dwd:design-time-name="5acac734-37de-4392-8315-a2d09f416f8e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f8388ad0-83a7-47ac-a1cc-2d5f55e9369e">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_deaths_smoothed</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2ec35bc2-507e-472e-90dc-80cbb64d4ffe">
+          <ID>Total Cases Per Million</ID>
+          <Name>Total Cases Per Million</Name>
+          <Source dwd:design-time-name="e71b3001-aa31-4afc-a22d-7c355f5039e4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="22a65a20-ea0f-42c7-8df6-8e70007bb4b2">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_cases_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="333ce13a-ac02-42d6-9a04-caeab3082f43">
+          <ID>New Cases Per Million</ID>
+          <Name>New Cases Per Million</Name>
+          <Source dwd:design-time-name="124b86ee-7379-4171-9097-5c0715cf373e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8f81382a-2195-4d91-9609-5809246141c6">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_cases_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d38ca2f8-0405-4a78-b005-9cbea88fc272">
+          <ID>New Cases Smoothed Per Million</ID>
+          <Name>New Cases Smoothed Per Million</Name>
+          <Source dwd:design-time-name="dd2533f3-5868-48df-bdde-8c4391c3c40e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="da8d25dc-49fa-4350-9623-7015d8ce574d">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_cases_smoothed_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8526cc89-59f2-4610-9d9c-1901b505d24b">
+          <ID>Total Deaths Per Million</ID>
+          <Name>Total Deaths Per Million</Name>
+          <Source dwd:design-time-name="9e56a7d0-5f13-4fce-a6e6-6096cb5bdf14">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2fd26d42-f2c6-4b81-bc0d-1c287a7a80d0">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_deaths_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6ebdc03b-87ba-4261-9937-3aacdd2ddc46">
+          <ID>New Deaths Per Million</ID>
+          <Name>New Deaths Per Million</Name>
+          <Source dwd:design-time-name="3850476e-1396-4aba-9049-d7370645be4a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="94b3f58c-8335-4c3f-a002-51f47f10cce0">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_deaths_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3597464b-9bca-4841-9fc9-8017b1a50b7a">
+          <ID>New Deaths Smoothed Per Million</ID>
+          <Name>New Deaths Smoothed Per Million</Name>
+          <Source dwd:design-time-name="570b9288-b409-463a-8069-9c470c06ef8a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="51090d5e-597d-4ffd-81da-5af930047191">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_deaths_smoothed_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="838c50ba-aa14-4509-a777-2be64235cf5b">
+          <ID>Reproduction Rate</ID>
+          <Name>Reproduction Rate</Name>
+          <Source dwd:design-time-name="4e2698d7-22d9-421b-9aca-23d1420cae73">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="11b2bd14-3471-470c-b4aa-d8fa876dec26">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>reproduction_rate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0957dcfb-e900-476e-b3c6-4afc53c3a1e4">
+          <ID>Icu Patients</ID>
+          <Name>Icu Patients</Name>
+          <Source dwd:design-time-name="172a3efb-b35f-4e89-bdc8-3e6cee2b8d1c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fb22fc07-7ffe-47d1-a83d-67a2eb21e26f">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>icu_patients</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cc6c24e5-af3f-46ec-aa19-d04fe1ca61b1">
+          <ID>Icu Patients Per Million</ID>
+          <Name>Icu Patients Per Million</Name>
+          <Source dwd:design-time-name="373cefbc-c959-4114-bf8b-1249da397b64">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="dc96c09e-f92d-4fa5-bc45-1defe4ad6a31">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>icu_patients_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="519bfe62-e1fd-43b5-ac7f-f75fdea22431">
+          <ID>Hosp Patients</ID>
+          <Name>Hosp Patients</Name>
+          <Source dwd:design-time-name="318b5313-a1ac-4d89-9512-7ebcf4e4cd52">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="73e7d87d-6a18-4afd-8e60-d5de47aef614">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>hosp_patients</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5b099724-17bf-4778-a1b1-784793ae85bc">
+          <ID>Hosp Patients Per Million</ID>
+          <Name>Hosp Patients Per Million</Name>
+          <Source dwd:design-time-name="e42e4788-17bc-4892-b4c0-763d2f3f1171">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5a7ddead-d606-4580-88c6-8ee4b90e6a45">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>hosp_patients_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="20ab71b6-6f03-4b66-bd28-f0958e16e5a4">
+          <ID>Weekly Icu Admissions</ID>
+          <Name>Weekly Icu Admissions</Name>
+          <Source dwd:design-time-name="dc79fd37-c0da-4256-8a10-1c5a020392f9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="335790a6-750c-419e-b78e-c7dbe131890c">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>weekly_icu_admissions</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="67215f5a-d192-4f56-8939-daa2f47b87d1">
+          <ID>Weekly Icu Admissions Per Million</ID>
+          <Name>Weekly Icu Admissions Per Million</Name>
+          <Source dwd:design-time-name="66813082-8462-4f67-89e7-3dcd00d76ba5">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0af8d932-e2d3-482b-aefd-972ed5370667">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>weekly_icu_admissions_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d0156b12-45c8-4c9c-8e11-f20e9f290942">
+          <ID>Weekly Hosp Admissions</ID>
+          <Name>Weekly Hosp Admissions</Name>
+          <Source dwd:design-time-name="1cc09a27-9d4a-4d5b-a150-5efbf5f0def1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ec65a98b-ca53-4363-8fbe-bedc4c97feab">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>weekly_hosp_admissions</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6be1452c-aff8-4232-9abc-39ef89f23eed">
+          <ID>Weekly Hosp Admissions Per Million</ID>
+          <Name>Weekly Hosp Admissions Per Million</Name>
+          <Source dwd:design-time-name="f02cdd2b-61c5-4c7f-ab9d-34f14ae103d7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2fc3f661-316a-4de0-863f-41bcfbe5db2b">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>weekly_hosp_admissions_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="06df88f2-346c-4315-b7e1-b7f1e8ff7db0">
+          <ID>New Tests</ID>
+          <Name>New Tests</Name>
+          <Source dwd:design-time-name="0a9d53b2-bdc8-42d2-b181-512eae03e7b1">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="df1f71d9-86dc-4e1b-ac13-62b905be698b">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_tests</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="09133faf-b76f-4e16-9eab-70f4cac0420a">
+          <ID>Total Tests</ID>
+          <Name>Total Tests</Name>
+          <Source dwd:design-time-name="384fd217-d866-49f5-a2c5-5bf0713142dc">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4485b452-d264-455c-9c67-b6962fab726d">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_tests</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aefb7433-5795-47d1-8a61-f9a7a563baca">
+          <ID>Total Tests Per Thousand</ID>
+          <Name>Total Tests Per Thousand</Name>
+          <Source dwd:design-time-name="1a53d1d0-cf94-44ae-b581-5465cf08dc19">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3559445f-4626-4ebc-92f2-fea2095eae5d">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_tests_per_thousand</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9daa32e8-7d26-4808-9f91-74f88812c20c">
+          <ID>New Tests Per Thousand</ID>
+          <Name>New Tests Per Thousand</Name>
+          <Source dwd:design-time-name="42ba4655-ec4e-4b7b-8219-35852432d0e9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="10fcffe2-4c96-4b88-ae0f-7794f8e33c56">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_tests_per_thousand</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1e2edc9e-e299-436b-a676-2a52e106dc34">
+          <ID>New Tests Smoothed</ID>
+          <Name>New Tests Smoothed</Name>
+          <Source dwd:design-time-name="50ffad28-0b68-46ae-9d21-48e929481462">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="08e63014-cb24-45bf-a144-d342911efb8e">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_tests_smoothed</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ef5b4fba-0877-4018-8be1-4a961f1ada3c">
+          <ID>New Tests Smoothed Per Thousand</ID>
+          <Name>New Tests Smoothed Per Thousand</Name>
+          <Source dwd:design-time-name="3859f205-49a2-4ad4-bb05-be412c94e65f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="30e9fd3d-4623-48ab-b3a7-68f081aa95a7">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_tests_smoothed_per_thousand</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d2c99f5b-6862-4789-9ca8-74b66cbcc1de">
+          <ID>Positive Rate</ID>
+          <Name>Positive Rate</Name>
+          <Source dwd:design-time-name="c197fc5e-d8bc-48e2-bc86-3736f71687e1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3c25150c-639f-4739-908d-b7ccfc5a9360">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>positive_rate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fab0e065-613f-4ca3-a8ca-c98d7579cd38">
+          <ID>Tests Per Case</ID>
+          <Name>Tests Per Case</Name>
+          <Source dwd:design-time-name="ee55d3f9-fb49-4b17-9318-1c262788acff">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="52bda2a8-0894-459f-94fa-cac94a1db6cd">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>tests_per_case</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d5755af4-cd26-4a33-95cd-10d69dbf66c0">
+          <ID>Total Vaccinations</ID>
+          <Name>Total Vaccinations</Name>
+          <Source dwd:design-time-name="ea9ca66f-6c4c-4f20-a82c-1567e316b064">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5472f54f-c606-4c5a-b35f-6577c9a6dfee">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_vaccinations</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3ce60949-e0ba-4144-bb03-ac332a111ad4">
+          <ID>People Vaccinated</ID>
+          <Name>People Vaccinated</Name>
+          <Source dwd:design-time-name="c1384360-1617-4aca-a19b-28aedb715cff">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9b2d9b91-416a-46a8-af20-79495853f472">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>people_vaccinated</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="51cf1bc1-22a5-4596-a50f-27268b6b87ad">
+          <ID>People Fully Vaccinated</ID>
+          <Name>People Fully Vaccinated</Name>
+          <Source dwd:design-time-name="21e3b781-d335-490b-8e92-f9c47000ca24">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="09761aad-8fb9-4a9d-a21f-4e13ce94e813">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>people_fully_vaccinated</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e10fd392-cfa5-4b25-bc7d-96fce7f7387e">
+          <ID>New Vaccinations</ID>
+          <Name>New Vaccinations</Name>
+          <Source dwd:design-time-name="15b77843-d458-4d56-9a74-e43f227bdbc0">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="35632663-c2c3-423f-ba62-d32eb74c3f68">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_vaccinations</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="86777f09-40aa-4bbc-812a-35de3a5b9916">
+          <ID>New Vaccinations Smoothed</ID>
+          <Name>New Vaccinations Smoothed</Name>
+          <Source dwd:design-time-name="fc629196-36fe-4e09-8c0f-9bd09f9d2f57">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="47daae9c-465c-4235-a7ce-f541ac136d01">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_vaccinations_smoothed</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6a217d4d-b2e9-4050-8cfd-c5901f8642ee">
+          <ID>Total Vaccinations Per Hundred</ID>
+          <Name>Total Vaccinations Per Hundred</Name>
+          <Source dwd:design-time-name="a0e2e697-3cf0-4b9e-9982-408d96ff5b4b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e111c79f-032e-4b49-9db8-aa4701a71c21">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>total_vaccinations_per_hundred</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aff93469-788c-4b4c-8df1-ef72bef9dee5">
+          <ID>People Vaccinated Per Hundred</ID>
+          <Name>People Vaccinated Per Hundred</Name>
+          <Source dwd:design-time-name="655b3d95-9cd1-4cdc-8086-b20e35342f05">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="77044283-08d3-4e15-8aab-157aab9b55dc">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>people_vaccinated_per_hundred</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aa341bca-23ad-492d-8184-1252ae082a7f">
+          <ID>People Fully Vaccinated Per Hundred</ID>
+          <Name>People Fully Vaccinated Per Hundred</Name>
+          <Source dwd:design-time-name="8eb87522-c164-4c11-aace-106fc5b0d11b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1d048937-fa76-4660-8d7d-dc5bb1683371">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>people_fully_vaccinated_per_hundred</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5e0e3fd7-368e-497a-866e-8743afac7c0c">
+          <ID>New Vaccinations Smoothed Per Million</ID>
+          <Name>New Vaccinations Smoothed Per Million</Name>
+          <Source dwd:design-time-name="0c4517bd-f5cd-4919-a05d-b6ae851bfac6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="003c86a3-ab62-4a74-aaab-30eec0cf3937">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>new_vaccinations_smoothed_per_million</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="296e5481-5401-43e1-be86-d8377d8f6cd5">
+          <ID>Stringency Index</ID>
+          <Name>Stringency Index</Name>
+          <Source dwd:design-time-name="7e2f2863-a0ef-4e91-8751-4764d6e38c8e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8d98583c-bf3d-4efb-b4e3-a52e52056dce">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>stringency_index</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f9d2aa6e-4bb4-4e87-8b7f-6a6ba91bf82d">
+          <ID>Population</ID>
+          <Name>Population</Name>
+          <Source dwd:design-time-name="3f30ec20-259b-40ca-9a6b-377675b24e9a">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f19b9801-7ce7-49d7-a986-b942d843888d">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>population</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2f3f4892-0df9-4267-9f12-4ba229ff2758">
+          <ID>Population Density</ID>
+          <Name>Population Density</Name>
+          <Source dwd:design-time-name="702f7a27-6f5c-4136-aa51-b51da18a5032">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6f80917e-98c8-4b12-b880-fbf091486701">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>population_density</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7ac7c7f5-cbc5-4d0f-b5c1-dfb541b8a0e1">
+          <ID>Median Age</ID>
+          <Name>Median Age</Name>
+          <Source dwd:design-time-name="8efa1d0e-9e0f-4a64-b602-8bb51104ed15">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9dbd7300-dc92-4945-9164-ddba901c8bf0">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>median_age</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4bc0edc8-d80c-49e9-a70d-8650d898c9ab">
+          <ID>Aged 65 Older</ID>
+          <Name>Aged 65 Older</Name>
+          <Source dwd:design-time-name="4e387928-09e0-40b1-be75-df8515fc8b77">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6af56003-86b9-4593-9486-198579abdef7">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>aged_65_older</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="04759bdd-431e-43b2-b904-9db5a29cdaac">
+          <ID>Aged 70 Older</ID>
+          <Name>Aged 70 Older</Name>
+          <Source dwd:design-time-name="0c60aef7-dfed-41c3-af55-6718cbaca2f3">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cac1ff9c-2923-49f9-ae2c-362552a2f52a">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>aged_70_older</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="811af20c-5ec6-44c1-9c3d-9010b7f541d2">
+          <ID>Gdp Per Capita</ID>
+          <Name>Gdp Per Capita</Name>
+          <Source dwd:design-time-name="520ef6d0-6c69-42d7-870a-cf9f49d15891">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8c63f571-1cc1-4cbe-a78f-21dc59c4a48d">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>gdp_per_capita</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7a7d3a3d-a259-4ed0-a094-593d7a168782">
+          <ID>Extreme Poverty</ID>
+          <Name>Extreme Poverty</Name>
+          <Source dwd:design-time-name="7aaa0492-a22a-4135-9fea-65890d0fd9b2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="80c1d931-ee75-456c-bccb-808c10eb05ce">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>extreme_poverty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="76bc0277-b040-4572-845c-ea995b89bc3d">
+          <ID>Cardiovasc Death Rate</ID>
+          <Name>Cardiovasc Death Rate</Name>
+          <Source dwd:design-time-name="b2963399-ca49-4feb-a47c-25ba5380f72b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6a19a725-d69f-41f3-81cd-38b11c7e7260">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>cardiovasc_death_rate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6b4fa866-21a9-4d8e-a2dd-05908415a0d2">
+          <ID>Diabetes Prevalence</ID>
+          <Name>Diabetes Prevalence</Name>
+          <Source dwd:design-time-name="ed3b499d-1138-4847-9036-e27e15424c48">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="297b40ab-f855-429f-b709-1161384273e6">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>diabetes_prevalence</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9730370e-ce04-4b14-b347-775ca31791b0">
+          <ID>Female Smokers</ID>
+          <Name>Female Smokers</Name>
+          <Source dwd:design-time-name="979d6d98-70e9-4616-9db5-62c19b2e8932">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="714a8423-051e-409c-b5d5-cce8e40419c4">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>female_smokers</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="24688fe0-0ad5-42e5-b393-313b486cfceb">
+          <ID>Male Smokers</ID>
+          <Name>Male Smokers</Name>
+          <Source dwd:design-time-name="21d6725e-914e-4ddf-9125-750ac706278f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="43973c47-11fc-4327-b477-cb4ce11ef00c">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>male_smokers</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bd02eec9-be64-4138-9ae2-71304011e04b">
+          <ID>Handwashing Facilities</ID>
+          <Name>Handwashing Facilities</Name>
+          <Source dwd:design-time-name="a2d84951-2e32-4549-b64b-c3f845613616">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="17980383-b59f-4cad-ac8f-5183cd19e25a">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>handwashing_facilities</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b99d6285-3930-4d54-8f28-2c511d352399">
+          <ID>Hospital Beds Per Thousand</ID>
+          <Name>Hospital Beds Per Thousand</Name>
+          <Source dwd:design-time-name="cf2d0d8f-42f1-478d-a915-5844072fbca7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f73f9378-79b5-4548-8b8d-3ec35679c365">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>hospital_beds_per_thousand</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="39e3ba31-bac0-4582-8bd5-38547a42f30c">
+          <ID>Life Expectancy</ID>
+          <Name>Life Expectancy</Name>
+          <Source dwd:design-time-name="83255363-a451-4cbc-b26e-73da96cd04ca">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bd46ca33-4c7b-4dbf-8dce-554687d29c36">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>life_expectancy</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="809837db-248a-4855-a893-d9f6184024c9">
+          <ID>Human Development Index</ID>
+          <Name>Human Development Index</Name>
+          <Source dwd:design-time-name="37ced63d-3854-452d-90e0-7d0b0f002857">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9cb270fb-5112-4434-9ab6-dbff3441d540">
+              <TableID>dbo_owid-covid-data</TableID>
+              <ColumnID>human_development_index</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5bcb6165-9ed9-46a4-9f94-19b36316db81">
+          <CubeDimensionID>Location</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e11b4621-c5ff-460d-b5c8-7e777309c30f">
+              <AttributeID>Location Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1760f427-613e-48ad-8cfc-c6498706349d">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3e595914-2160-4bae-b83a-e181abd4ffa6">
+                    <TableID>dbo_owid-covid-data</TableID>
+                    <ColumnID>location_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9ce2fc34-db39-4f64-a372-f4c72c261ebd">
+          <CubeDimensionID>Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cbe601b6-0a73-469e-b585-7520893ebe6b">
+              <AttributeID>Date Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="212a3270-1f23-4157-9450-31c6d5e12022">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ce5814bd-54eb-4ce4-b07a-11a4a6ed07ca">
+                    <TableID>dbo_owid-covid-data</TableID>
+                    <ColumnID>date_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="6d49f0d6-0c03-4505-90b4-8de629cb0f77">
+    <DataSourceViewID>CovidView</DataSourceViewID>
+  </Source>
+</Cube>

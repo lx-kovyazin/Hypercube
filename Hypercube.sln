@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypercube", "Hypercube\Hypercube.csproj", "{8492EC4F-6F47-463F-A60D-B36AE9709642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HypercubeClient", "HypercubeClient\HypercubeClient.csproj", "{DAD382C6-7EAA-4820-B19C-43FB973D7E09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HypercubeTest", "HypercubeTest\HypercubeTest.csproj", "{C2B629CB-B9AC-4B2B-AA89-070916DADE32}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "HypercubeAS", "HypercubeAS\HypercubeAS.dwproj", "{95171B69-CAFD-418D-A312-6CA5DC6773B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8492EC4F-6F47-463F-A60D-B36AE9709642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD382C6-7EAA-4820-B19C-43FB973D7E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B629CB-B9AC-4B2B-AA89-070916DADE32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Debug|Any CPU.ActiveCfg = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Debug|Any CPU.Build.0 = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Debug|Any CPU.Deploy.0 = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Development|Any CPU.ActiveCfg = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Development|Any CPU.Build.0 = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Development|Any CPU.Deploy.0 = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Release|Any CPU.ActiveCfg = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Release|Any CPU.Build.0 = Development
+		{95171B69-CAFD-418D-A312-6CA5DC6773B8}.Release|Any CPU.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF484AFE-DE61-487B-AF14-0CCBE34D64EE}
+	EndGlobalSection
+EndGlobal

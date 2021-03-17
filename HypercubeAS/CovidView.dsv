@@ -1,0 +1,169 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7a8a0d38-96ad-41bd-9bd6-b9a74136c426" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CovidView</ID>
+  <Name>CovidView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10034" scrolltop="-5622" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="26749" y="15346" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="owid-covid-data" left="-1383" top="-2434" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="6324" height="9022" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b41800003e230000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_owid-covid-data" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-10034</DiagramViewPortLeft>
+            <DiagramViewPortTop>-5622</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Covid</DataSourceID>
+  <Schema>
+    <xs:schema id="CovidView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="CovidView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="ea1168bd-8062-4c6b-8ccf-e9d4214d7504">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_owid-covid-data" msprop:design-time-name="2bb611bb-37a0-4927-ada5-305cc71baee3" msprop:FriendlyName="owid-covid-data" msprop:DbSchemaName="dbo" msprop:DbTableName="owid-covid-data" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="iso_code" msprop:design-time-name="861cdded-840d-4c48-9c4c-9a44ab87d3c5" msprop:DbColumnName="iso_code" msprop:FriendlyName="iso_code" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="continent" msprop:design-time-name="4b0ed2e7-47d6-4fcf-bd9f-28cb3d8be0db" msprop:DbColumnName="continent" msprop:FriendlyName="continent" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="location" msprop:design-time-name="7a706c25-a80e-4bf1-b0c0-2bc795b35525" msprop:DbColumnName="location" msprop:FriendlyName="location" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="date" msprop:design-time-name="54dd5459-e983-4bf2-b2ae-95b70acf5d79" msprop:DbColumnName="date" msprop:FriendlyName="date" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="total_cases" msprop:design-time-name="83cbe369-8f83-4d87-933d-aebab4897191" msprop:DbColumnName="total_cases" msprop:FriendlyName="total_cases" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_cases" msprop:design-time-name="35a28d68-cf58-43da-adb9-cc200d2780ab" msprop:DbColumnName="new_cases" msprop:FriendlyName="new_cases" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_cases_smoothed" msprop:design-time-name="8e33d9a4-5140-4372-b2cb-c0b7c35ff737" msprop:DbColumnName="new_cases_smoothed" msprop:FriendlyName="new_cases_smoothed" type="xs:double" minOccurs="0" />
+                  <xs:element name="total_deaths" msprop:design-time-name="3dff67d7-da83-4fb2-982e-396875c1790a" msprop:DbColumnName="total_deaths" msprop:FriendlyName="total_deaths" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_deaths" msprop:design-time-name="4abbec29-32da-47ac-8024-11000e102e20" msprop:DbColumnName="new_deaths" msprop:FriendlyName="new_deaths" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_deaths_smoothed" msprop:design-time-name="60aab6b3-cb10-4ecd-8756-8f80522829b0" msprop:DbColumnName="new_deaths_smoothed" msprop:FriendlyName="new_deaths_smoothed" type="xs:double" minOccurs="0" />
+                  <xs:element name="total_cases_per_million" msprop:design-time-name="1acbe0cd-08b8-4ff2-99d9-88bfb13dd02b" msprop:DbColumnName="total_cases_per_million" msprop:FriendlyName="total_cases_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_cases_per_million" msprop:design-time-name="c43e2960-2859-40a1-b46e-29da5bcf489f" msprop:DbColumnName="new_cases_per_million" msprop:FriendlyName="new_cases_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_cases_smoothed_per_million" msprop:design-time-name="480c69da-abe7-455c-9314-4cf8341dd8d7" msprop:DbColumnName="new_cases_smoothed_per_million" msprop:FriendlyName="new_cases_smoothed_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="total_deaths_per_million" msprop:design-time-name="ef795108-5934-4ef9-8099-13dd42f1f5f0" msprop:DbColumnName="total_deaths_per_million" msprop:FriendlyName="total_deaths_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_deaths_per_million" msprop:design-time-name="d203f23a-e250-4d98-971b-306eb72c4708" msprop:DbColumnName="new_deaths_per_million" msprop:FriendlyName="new_deaths_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_deaths_smoothed_per_million" msprop:design-time-name="c2fac8b0-7723-4a04-8d2c-02d31560226d" msprop:DbColumnName="new_deaths_smoothed_per_million" msprop:FriendlyName="new_deaths_smoothed_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="reproduction_rate" msprop:design-time-name="c0f45cb3-524a-4a21-928f-74c5c73f8fdf" msprop:DbColumnName="reproduction_rate" msprop:FriendlyName="reproduction_rate" type="xs:double" minOccurs="0" />
+                  <xs:element name="icu_patients" msprop:design-time-name="86f1c9a4-00ff-49c4-a71f-8c36dd2a29fc" msprop:DbColumnName="icu_patients" msprop:FriendlyName="icu_patients" type="xs:int" minOccurs="0" />
+                  <xs:element name="icu_patients_per_million" msprop:design-time-name="dbc7357e-42ed-4487-9eaf-039d343b0844" msprop:DbColumnName="icu_patients_per_million" msprop:FriendlyName="icu_patients_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="hosp_patients" msprop:design-time-name="78a41ee5-ccb3-4628-8018-5612f7c5cf3d" msprop:DbColumnName="hosp_patients" msprop:FriendlyName="hosp_patients" type="xs:int" minOccurs="0" />
+                  <xs:element name="hosp_patients_per_million" msprop:design-time-name="0d81a656-0569-4ce3-9467-c97cf847ca35" msprop:DbColumnName="hosp_patients_per_million" msprop:FriendlyName="hosp_patients_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="weekly_icu_admissions" msprop:design-time-name="60cd1146-e8c1-4c55-b831-c73a829898d3" msprop:DbColumnName="weekly_icu_admissions" msprop:FriendlyName="weekly_icu_admissions" type="xs:double" minOccurs="0" />
+                  <xs:element name="weekly_icu_admissions_per_million" msprop:design-time-name="5ada9885-d863-40ba-85cc-2a01bd0082dc" msprop:DbColumnName="weekly_icu_admissions_per_million" msprop:FriendlyName="weekly_icu_admissions_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="weekly_hosp_admissions" msprop:design-time-name="ef3a6b62-b70e-4784-832f-d09891468982" msprop:DbColumnName="weekly_hosp_admissions" msprop:FriendlyName="weekly_hosp_admissions" type="xs:double" minOccurs="0" />
+                  <xs:element name="weekly_hosp_admissions_per_million" msprop:design-time-name="a73495c2-aa5e-4a83-8603-51b746233dac" msprop:DbColumnName="weekly_hosp_admissions_per_million" msprop:FriendlyName="weekly_hosp_admissions_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_tests" msprop:design-time-name="2d0d6f60-9228-4111-920a-001e8c75ffba" msprop:DbColumnName="new_tests" msprop:FriendlyName="new_tests" type="xs:int" minOccurs="0" />
+                  <xs:element name="total_tests" msprop:design-time-name="dad9a33a-bf39-4ea3-a216-cc402bbc5033" msprop:DbColumnName="total_tests" msprop:FriendlyName="total_tests" type="xs:int" minOccurs="0" />
+                  <xs:element name="total_tests_per_thousand" msprop:design-time-name="2de0ca33-69e5-4f9b-b702-dbd211eed419" msprop:DbColumnName="total_tests_per_thousand" msprop:FriendlyName="total_tests_per_thousand" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_tests_per_thousand" msprop:design-time-name="0a71fe71-5916-458a-938a-cbcb1c2c4b48" msprop:DbColumnName="new_tests_per_thousand" msprop:FriendlyName="new_tests_per_thousand" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_tests_smoothed" msprop:design-time-name="ac312e36-b3e9-43ff-86a2-ce186b6d6077" msprop:DbColumnName="new_tests_smoothed" msprop:FriendlyName="new_tests_smoothed" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_tests_smoothed_per_thousand" msprop:design-time-name="2032a508-3e18-4a95-9b90-8b715458ab77" msprop:DbColumnName="new_tests_smoothed_per_thousand" msprop:FriendlyName="new_tests_smoothed_per_thousand" type="xs:double" minOccurs="0" />
+                  <xs:element name="positive_rate" msprop:design-time-name="9969d3be-4a9d-4795-aa11-42407b3c40a4" msprop:DbColumnName="positive_rate" msprop:FriendlyName="positive_rate" type="xs:double" minOccurs="0" />
+                  <xs:element name="tests_per_case" msprop:design-time-name="6278da13-8278-401b-b96f-d8a815d6f131" msprop:DbColumnName="tests_per_case" msprop:FriendlyName="tests_per_case" type="xs:double" minOccurs="0" />
+                  <xs:element name="tests_units" msprop:design-time-name="9d5154de-3868-44fa-85eb-ef32dd46d681" msprop:DbColumnName="tests_units" msprop:FriendlyName="tests_units" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="total_vaccinations" msprop:design-time-name="539b72bd-d056-4c23-a7dd-8785a724a9c2" msprop:DbColumnName="total_vaccinations" msprop:FriendlyName="total_vaccinations" type="xs:int" minOccurs="0" />
+                  <xs:element name="people_vaccinated" msprop:design-time-name="55f40d02-a075-4aa3-b748-108e55754b96" msprop:DbColumnName="people_vaccinated" msprop:FriendlyName="people_vaccinated" type="xs:int" minOccurs="0" />
+                  <xs:element name="people_fully_vaccinated" msprop:design-time-name="b6c5c03a-a9b7-4371-9fe6-c330d83c4803" msprop:DbColumnName="people_fully_vaccinated" msprop:FriendlyName="people_fully_vaccinated" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_vaccinations" msprop:design-time-name="06bd0d4a-4437-488f-8f0c-17f398fc12b4" msprop:DbColumnName="new_vaccinations" msprop:FriendlyName="new_vaccinations" type="xs:int" minOccurs="0" />
+                  <xs:element name="new_vaccinations_smoothed" msprop:design-time-name="18c230be-b460-41e8-9a51-5fc73ff22ec4" msprop:DbColumnName="new_vaccinations_smoothed" msprop:FriendlyName="new_vaccinations_smoothed" type="xs:int" minOccurs="0" />
+                  <xs:element name="total_vaccinations_per_hundred" msprop:design-time-name="0740a3cf-e1dd-4400-bc88-7d464fa77d20" msprop:DbColumnName="total_vaccinations_per_hundred" msprop:FriendlyName="total_vaccinations_per_hundred" type="xs:double" minOccurs="0" />
+                  <xs:element name="people_vaccinated_per_hundred" msprop:design-time-name="cd74a390-a52f-45f6-b095-f0927fad06bf" msprop:DbColumnName="people_vaccinated_per_hundred" msprop:FriendlyName="people_vaccinated_per_hundred" type="xs:double" minOccurs="0" />
+                  <xs:element name="people_fully_vaccinated_per_hundred" msprop:design-time-name="328d75ca-37c2-41ab-9720-a8db470bc90f" msprop:DbColumnName="people_fully_vaccinated_per_hundred" msprop:FriendlyName="people_fully_vaccinated_per_hundred" type="xs:double" minOccurs="0" />
+                  <xs:element name="new_vaccinations_smoothed_per_million" msprop:design-time-name="7ede3781-b850-4f47-a48a-b2424c5cea76" msprop:DbColumnName="new_vaccinations_smoothed_per_million" msprop:FriendlyName="new_vaccinations_smoothed_per_million" type="xs:double" minOccurs="0" />
+                  <xs:element name="stringency_index" msprop:design-time-name="a5338fd9-c012-49ab-acb9-6104a78fc9fc" msprop:DbColumnName="stringency_index" msprop:FriendlyName="stringency_index" type="xs:double" minOccurs="0" />
+                  <xs:element name="population" msprop:design-time-name="d0b1dd97-6a4d-4f1d-a2e2-9ca99c9babba" msprop:DbColumnName="population" msprop:FriendlyName="population" type="xs:long" minOccurs="0" />
+                  <xs:element name="population_density" msprop:design-time-name="f968bceb-7913-45db-90e0-4764a25f4a9c" msprop:DbColumnName="population_density" msprop:FriendlyName="population_density" type="xs:double" minOccurs="0" />
+                  <xs:element name="median_age" msprop:design-time-name="08fd7000-0c0d-4294-a6eb-ac7ac8180f0e" msprop:DbColumnName="median_age" msprop:FriendlyName="median_age" type="xs:double" minOccurs="0" />
+                  <xs:element name="aged_65_older" msprop:design-time-name="99baa012-da01-42c6-ae43-7886cf79cec4" msprop:DbColumnName="aged_65_older" msprop:FriendlyName="aged_65_older" type="xs:double" minOccurs="0" />
+                  <xs:element name="aged_70_older" msprop:design-time-name="9c9c477e-5e63-4e74-b65e-2ef7e333c28c" msprop:DbColumnName="aged_70_older" msprop:FriendlyName="aged_70_older" type="xs:double" minOccurs="0" />
+                  <xs:element name="gdp_per_capita" msprop:design-time-name="08ea63c9-0ea2-413c-a15a-d994887f9dad" msprop:DbColumnName="gdp_per_capita" msprop:FriendlyName="gdp_per_capita" type="xs:double" minOccurs="0" />
+                  <xs:element name="extreme_poverty" msprop:design-time-name="cde6af97-dd3a-4236-a5fc-d0c831e66225" msprop:DbColumnName="extreme_poverty" msprop:FriendlyName="extreme_poverty" type="xs:double" minOccurs="0" />
+                  <xs:element name="cardiovasc_death_rate" msprop:design-time-name="96e68e55-720a-4e3e-909a-dc715bdde5c3" msprop:DbColumnName="cardiovasc_death_rate" msprop:FriendlyName="cardiovasc_death_rate" type="xs:double" minOccurs="0" />
+                  <xs:element name="diabetes_prevalence" msprop:design-time-name="c59e5bd0-c548-463c-bc09-f24ab01379de" msprop:DbColumnName="diabetes_prevalence" msprop:FriendlyName="diabetes_prevalence" type="xs:double" minOccurs="0" />
+                  <xs:element name="female_smokers" msprop:design-time-name="586a50c7-93f5-49b4-aaac-a46f22719c2f" msprop:DbColumnName="female_smokers" msprop:FriendlyName="female_smokers" type="xs:double" minOccurs="0" />
+                  <xs:element name="male_smokers" msprop:design-time-name="69255ad1-0924-4c51-bf21-041b0cece92b" msprop:DbColumnName="male_smokers" msprop:FriendlyName="male_smokers" type="xs:double" minOccurs="0" />
+                  <xs:element name="handwashing_facilities" msprop:design-time-name="a72e9532-08cb-47af-abe7-97679fa0d4be" msprop:DbColumnName="handwashing_facilities" msprop:FriendlyName="handwashing_facilities" type="xs:double" minOccurs="0" />
+                  <xs:element name="hospital_beds_per_thousand" msprop:design-time-name="93ac6868-cb72-478e-8b72-db3454d68425" msprop:DbColumnName="hospital_beds_per_thousand" msprop:FriendlyName="hospital_beds_per_thousand" type="xs:double" minOccurs="0" />
+                  <xs:element name="life_expectancy" msprop:design-time-name="38689ebb-5f40-435e-b5a3-e4098afacfb4" msprop:DbColumnName="life_expectancy" msprop:FriendlyName="life_expectancy" type="xs:double" minOccurs="0" />
+                  <xs:element name="human_development_index" msprop:design-time-name="02759fa1-d6a3-4ef2-9971-3735a384a578" msprop:DbColumnName="human_development_index" msprop:FriendlyName="human_development_index" type="xs:double" minOccurs="0" />
+                  <xs:element name="location_id" msdata:ReadOnly="true" msprop:design-time-name="5c94fe77-1eeb-43f4-884c-8444bab8c0e7" msprop:IsLogical="True" msprop:FriendlyName="location_id" msprop:Description="id" msprop:DbColumnName="location_id" msprop:ComputedColumnExpression="checksum(iso_code + '_' + isnull(continent, '-') + '_' + location)" type="xs:int" minOccurs="0" />
+                  <xs:element name="date_id" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="checksum(convert(nvarchar, date, 3))" msprop:IsLogical="True" msprop:design-time-name="1ec5a765-48aa-453b-89a6-be60f4474842" msprop:DbColumnName="date_id" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <CovidView xmlns="" />
+  </Schema>
+</DataSourceView>

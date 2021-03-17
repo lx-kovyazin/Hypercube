@@ -1,0 +1,325 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e04589ef-0c84-4800-97d9-1e1d3a337782" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DateLinearRegressionStructure</ID>
+  <Name>DateLinearRegressionStructure</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>MDXFilterComponent</Name>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="f81a1065-ca28-44b3-887f-067f932a9919">
+    <DataSourceID>.</DataSourceID>
+    <CubeID>CovidCube</CubeID>
+    <CubeDimensionID>Date</CubeDimensionID>
+    <Filter></Filter>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="31ffae78-ef82-4084-ba58-06631d8cd7b6">
+      <ID>Date Id</ID>
+      <Name>Date Id</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="9bbca991-d919-478c-bbce-909b8c76cc56">
+        <CubeID>CovidCube</CubeID>
+        <CubeDimensionID>Date</CubeDimensionID>
+        <AttributeID>Date Id</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Key</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="67354668-8214-440c-818d-84bc2ed77e86">
+      <ID>Date</ID>
+      <Name>Date</Name>
+      <Type>Date</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="2a31ffe0-d4e3-4e7d-836a-ee899d4a716f">
+        <CubeID>CovidCube</CubeID>
+        <CubeDimensionID>Date</CubeDimensionID>
+        <AttributeID>Date</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Ordered</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0f277b4a-fd4f-4a8b-ad37-6bbef83d5986">
+      <ID>New Cases</ID>
+      <Name>New Cases</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="9df98405-b59e-47d2-847f-f79f4bd3949b">
+        <MeasureID>New Cases</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e870241e-c94e-4b21-b0f3-35f7f0bd7655">
+      <ID>New Deaths</ID>
+      <Name>New Deaths</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="b00f2210-a4b1-4bcd-88f9-36703027695d">
+        <MeasureID>New Deaths</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4124c35b-0e46-4ed3-b01c-580f7c159319">
+      <ID>New Tests</ID>
+      <Name>New Tests</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="7438c848-10d5-4669-895d-f2b331a28031">
+        <MeasureID>New Tests</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ae28cda2-9fb4-4c66-b157-c6154e0c30d6">
+      <ID>Total Cases</ID>
+      <Name>Total Cases</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="d3dbd19e-6f2f-45a5-b413-80005386a4a3">
+        <MeasureID>Total Cases</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d249bdba-82f6-446a-8f82-1afffc2017b1">
+      <ID>Total Deaths</ID>
+      <Name>Total Deaths</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="36e0fbf3-bf92-474f-b49e-eeac0bd2f125">
+        <MeasureID>Total Deaths</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f2832ad1-93f6-4e4a-aa76-6baff7ba0f15">
+      <ID>Total Tests</ID>
+      <Name>Total Tests</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="6c0dc3d8-f422-43d0-b62a-dd721d086579">
+        <MeasureID>Total Tests</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="765e0869-04d1-4a01-95da-1d1ce0b0974c">
+      <Annotations>
+        <Annotation>
+          <Name>MDXFilterComponent</Name>
+          <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+        </Annotation>
+      </Annotations>
+      <ID>Location</ID>
+      <Name>Location</Name>
+      <SourceMeasureGroup dwd:design-time-name="9a3aea08-90c2-4084-9082-46cca273c938">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>CovidCube</CubeID>
+        <MeasureGroupID>Owid-covid-data</MeasureGroupID>
+        <RefreshInterval>PT1S</RefreshInterval>
+        <Filter></Filter>
+      </SourceMeasureGroup>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="446689b7-7807-4b70-ba35-f85feedc5b82">
+          <ID>Location Id</ID>
+          <Name>Location Id</Name>
+          <IsKey>true</IsKey>
+          <Type>Long</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="319d5b4b-bfcb-471d-b0de-e2da0e49aec9">
+            <CubeID>CovidCube</CubeID>
+            <CubeDimensionID>Location</CubeDimensionID>
+            <AttributeID>Location Id</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Key</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f56dc713-3b9c-4436-bbbc-d9eaf0d18377">
+          <ID>Continent</ID>
+          <Name>Continent</Name>
+          <Type>Text</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="aeed3bbb-d7a7-49ca-b9ee-e61f511c5af6">
+            <CubeID>CovidCube</CubeID>
+            <CubeDimensionID>Location</CubeDimensionID>
+            <AttributeID>Continent</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Ordered</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4ff7fefe-63ba-4e50-8628-44bdf51adb63">
+          <ID>Location</ID>
+          <Name>Location</Name>
+          <Type>Text</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="a222d83d-5e5b-404e-aad3-0676e3bc20f7">
+            <CubeID>CovidCube</CubeID>
+            <CubeDimensionID>Location</CubeDimensionID>
+            <AttributeID>Location</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Ordered</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f933491d-e7d5-430f-910e-13ea54b6eeb9">
+          <ID>New Cases</ID>
+          <Name>New Cases</Name>
+          <Type>Long</Type>
+          <Source xsi:type="MeasureBinding" dwd:design-time-name="32dd0ee4-40e6-4a71-a08b-989a12678c1d">
+            <MeasureID>New Cases</MeasureID>
+          </Source>
+          <Content>Continuous</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="29f2742a-298f-449a-a399-fdb39f57e381">
+          <ID>New Deaths</ID>
+          <Name>New Deaths</Name>
+          <Type>Long</Type>
+          <Source xsi:type="MeasureBinding" dwd:design-time-name="313dba6a-3354-4211-bf89-6b0b112c3dc2">
+            <MeasureID>New Deaths</MeasureID>
+          </Source>
+          <Content>Continuous</Content>
+        </Column>
+      </Columns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="444a0477-9589-4b78-8177-880ce7d76912">
+      <ID>DateLinearRegressionModel</ID>
+      <Name>DateLinearRegressionModel</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Linear_Regression</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="4651fbc7-8ab4-49b5-b41a-ba4028f03262">
+          <ID>Date Id</ID>
+          <Name>Date Id</Name>
+          <SourceColumnID>Date Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="fb37873b-d519-4130-8912-b4141b8bf4fa">
+          <ID>Date</ID>
+          <Name>Date</Name>
+          <SourceColumnID>Date</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2c80c8c0-9944-404f-9bf1-3a048bac38ff">
+          <ID>New Cases</ID>
+          <Name>New Cases</Name>
+          <SourceColumnID>New Cases</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="4ef6bd84-30c5-4725-a6fc-ef5beea6df4e">
+          <ID>New Deaths</ID>
+          <Name>New Deaths</Name>
+          <SourceColumnID>New Deaths</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="04aed3b6-9dbd-48b0-bb87-a489ad42cf25">
+          <ID>New Tests</ID>
+          <Name>New Tests</Name>
+          <SourceColumnID>New Tests</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="d4c7098c-fbab-4c32-ba19-a4688b99076f">
+          <ID>Total Cases</ID>
+          <Name>Total Cases</Name>
+          <SourceColumnID>Total Cases</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="114a1042-2562-47cc-b3b9-55b413a0cf3c">
+          <ID>Total Deaths</ID>
+          <Name>Total Deaths</Name>
+          <SourceColumnID>Total Deaths</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="ef247f2b-2d91-4f39-be72-1258d8b74f02">
+          <ID>Total Tests</ID>
+          <Name>Total Tests</Name>
+          <SourceColumnID>Total Tests</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="a910025b-b292-4f6c-aa96-c98926a7b834">
+          <ID>Location</ID>
+          <Name>Location</Name>
+          <SourceColumnID>Location</SourceColumnID>
+          <Columns>
+            <Column dwd:design-time-name="3c3b9039-5f3d-4788-9773-4f2530d7bb14">
+              <ID>Location Id</ID>
+              <Name>Location Id</Name>
+              <SourceColumnID>Location Id</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column dwd:design-time-name="7ef7a6b1-f9c1-46f7-a305-919056b66c13">
+              <ID>Continent</ID>
+              <Name>Continent</Name>
+              <SourceColumnID>Continent</SourceColumnID>
+            </Column>
+            <Column dwd:design-time-name="7bd087e5-a38f-43ef-b229-3865c0afd3d8">
+              <ID>Location</ID>
+              <Name>Location</Name>
+              <SourceColumnID>Location</SourceColumnID>
+            </Column>
+            <Column dwd:design-time-name="dfbbbb0f-4997-467f-a59b-218265f2f293">
+              <ID>New Cases</ID>
+              <Name>New Cases</Name>
+              <SourceColumnID>New Cases</SourceColumnID>
+              <Usage>Predict</Usage>
+            </Column>
+            <Column dwd:design-time-name="cf6a0fb1-d9d4-44b5-ac33-8a8d0e375fb7">
+              <ID>New Deaths</ID>
+              <Name>New Deaths</Name>
+              <SourceColumnID>New Deaths</SourceColumnID>
+              <Usage>Predict</Usage>
+            </Column>
+          </Columns>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+  <ddl100_100:HoldoutMaxCases>20000</ddl100_100:HoldoutMaxCases>
+</MiningStructure>

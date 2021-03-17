@@ -4,8 +4,11 @@
 
 /.vs
 /bin
+/obj
+/TestResults
+/MigrationBackup
 /Hypercube/obj
-/Hypercube/.vs
 /Hypercube/packages
-/AnalysisServicesTest/obj
-/AnalysisServicesTest/.vs
+/HypercubeClient/obj
+/HypercubeTest/obj
+/HypercubeAS/obj
