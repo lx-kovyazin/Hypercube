@@ -18,7 +18,7 @@ namespace Hypercube.Forms
             InitializeMaterialSkinManager();
 
             // TODO: Not working.
-            queryConstructor.DataCollected += adomdGrid.LoadDataAsync;
+            queryConstructor.DataCollected += adomdGrid.LoadData;
         }
 
         private void InitializeMaterialSkinManager()
