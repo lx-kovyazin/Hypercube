@@ -15,6 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -52,17 +52,187 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Hypercube.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Control\AboutComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AboutComponent.Designer.cs">
+      <DependentUpon>AboutComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CommandComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CommandComponent.Designer.cs">
+      <DependentUpon>CommandComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ConnectionComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ConnectionComponent.Designer.cs">
+      <DependentUpon>ConnectionComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ConstructorComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ConstructorComponent.Designer.cs">
+      <DependentUpon>ConstructorComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ControlExtensions.cs" />
+    <Compile Include="Control\CubeTreeComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CubeTreeComponent.Designer.cs">
+      <DependentUpon>CubeTreeComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CubeTreeNode.cs" />
+    <Compile Include="Control\FixedMetaListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FixedMetaListView.Designer.cs">
+      <DependentUpon>FixedMetaListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FixedMetaListViewItem.cs" />
+    <Compile Include="Control\MDXLexer.cs" />
+    <Compile Include="Control\QueryConstructor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\QueryConstructor.Designer.cs">
+      <DependentUpon>QueryConstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SettingsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SettingsComponent.Designer.cs">
+      <DependentUpon>SettingsComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="Forms\BrowserForm.Designer.cs">
+      <DependentUpon>BrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdomdDimTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\AdomdDimTree.Designer.cs">
+      <DependentUpon>AdomdDimTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdomdFunctionsTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\AdomdFunctionsTree.Designer.cs">
+      <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ADOMDGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\ADOMDGrid.Designer.cs">
+      <DependentUpon>ADOMDGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdomdProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AdomdProperties.Designer.cs">
+      <DependentUpon>AdomdProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Command.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Command.Designer.cs">
+      <DependentUpon>Command.cs</DependentUpon>
+    </Compile>
+    <None Include="Forms\BrowserOld.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="Forms\BrowserOld.Designer.cs">
+      <DependentUpon>BrowserOld.cs</DependentUpon>
+    </None>
+    <Compile Include="Forms\frmSchemaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSchemaInfo.Designer.cs">
+      <DependentUpon>frmSchemaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PropertiesDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PropertiesDlg.Designer.cs">
+      <DependentUpon>PropertiesDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="TableData.cs" />
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="Control\AboutComponent.resx">
+      <DependentUpon>AboutComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CommandComponent.resx">
+      <DependentUpon>CommandComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ConnectionComponent.resx">
+      <DependentUpon>ConnectionComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ConstructorComponent.resx">
+      <DependentUpon>ConstructorComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CubeTreeComponent.resx">
+      <DependentUpon>CubeTreeComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\FixedMetaListView.resx">
+      <DependentUpon>FixedMetaListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\QueryConstructor.resx">
+      <DependentUpon>QueryConstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SettingsComponent.resx">
+      <DependentUpon>SettingsComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowserForm.resx">
+      <DependentUpon>BrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AdomdDimTree.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdomdDimTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AdomdFunctionsTree.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AdomdProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdomdProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Command.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Command.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowserOld.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BrowserOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSchemaInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSchemaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PropertiesDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PropertiesDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -79,11 +249,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="Resources\Images\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -94,10 +260,134 @@
       <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="DevAge.SourceGrid3, Version=1.0.0.8, Culture=neutral, PublicKeyToken=faad465d84242dbf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\DevAge.SourceGrid3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.OlapEnum, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Calc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\CalcMeasure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Catalog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Cube.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\DimAttr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Dimension.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\DimHier.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Function.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Kpi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Level5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Measure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OpenFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Reconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Set.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Hypercube.ico" />
+    <Content Include="Libs\DevAge.Core.dll" />
+    <Content Include="Libs\DevAge.Drawing.dll" />
+    <Content Include="Libs\DevAge.SourceGrid3.dll" />
+    <Content Include="Libs\DevAge.Windows.Forms.dll" />
+    <None Include="Resources\Images\CubeIcon.png" />
+    <None Include="Resources\Images\ConstructorIcon.png" />
+    <None Include="Resources\Images\ConnectionIcon.png" />
+    <None Include="Resources\Images\AboutIcon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HypercubeClient\HypercubeClient.csproj">
+      <Project>{dad382c6-7eaa-4820-b19c-43fb973d7e09}</Project>
+      <Name>HypercubeClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdPartyFork\MDXBuilderLibrary\MDXBuilderLibrary.csproj">
+      <Project>{e052af29-8cf5-45ac-b22f-6e7b7539af94}</Project>
+      <Name>MDXBuilderLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="fernandreu.ScintillaNET">
+      <Version>4.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialSkin.2">
+      <Version>2.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AnalysisServices.AdomdClient.retail.amd64">
+      <Version>19.18.0</Version>
+    </PackageReference>
+    <PackageReference Include="Npgsql">
+      <Version>5.0.4</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

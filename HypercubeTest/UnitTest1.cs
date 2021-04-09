@@ -1,64 +1,58 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Hypercube.Client;
+﻿using Hypercube.Client;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Hypercube.Test
 {
     [TestClass]
     public class HypercubeClientTest
     {
+        ConnectionString connectionString;
+
+        [TestInitialize]
+        public void InitializeHypercubeClientTest()
+        {
+            connectionString = new ConnectionString()
+            {
+                Source = "localhost",
+                Catalog = "HypercubeAS"
+            };
+        }
+
         [TestMethod]
         public void ClientConnectionIsOpened()
         {
-            using (var client = new HypercubeClient())
-            {
-                client.Start();
-                Assert.IsTrue(client.Connection.State == System.Data.ConnectionState.Open);
-            }
+            var client = Client.Client.Instance;
+            client.Connect(connectionString);
+            Assert.IsTrue(client.Connection.State == System.Data.ConnectionState.Open);
         }
 
         [TestMethod]
         public void ClientConnectionIsClosed()
         {
-            var client = new HypercubeClient();
-            client.Start();
-            client.Dispose();
+            var client = Client.Client.Instance;
+            client.Connect(connectionString);
+            client.Disconnect();
             Assert.IsTrue(client.Connection.State == System.Data.ConnectionState.Closed);
         }
 
         [TestMethod]
-        public void GetCubeCollectionTest()
+        public void GetMetadataTest()
         {
-            using (var client = new HypercubeClient())
-            {
-                client.Start();
+            var client = Client.Client.Instance;
+            client.Connect(connectionString);
+            Debug.Print(client.MetaInfo.ToString());
+        }
 
-                if (client.Connection.Cubes is null || client.Connection.Cubes.Count == 0)
-                    Assert.IsTrue(false);
-
-                foreach (var cube in client.Connection.Cubes)
-                {
-                    if (cube.Type != Microsoft.AnalysisServices.AdomdClient.CubeType.Cube)
-                        continue;
-
-                    Debug.Print($"Cube: {cube}");
-                    foreach (var dimension in cube.Dimensions)
-                    {
-                        if (dimension.DimensionType == Microsoft.AnalysisServices.AdomdClient.DimensionTypeEnum.Measure)
-                            continue;
-
-                        Debug.Print($"Dimension: {dimension}");
-                    }
-
-                    foreach (var measure in cube.Measures)
-                    {
-                        Debug.Print($"Measure: {measure}");
-                    }
-                }
-                
-                Assert.IsTrue(true);
-            }
+        [TestMethod]
+        public void FilterStringListTest()
+        {
+            var capturedString = "ab";
+            var stringList = new List<string> { "abc", "abcd", "qwe" };
+            var filteredStringList = stringList.Where(str => str.StartsWith(capturedString)).ToList();
+            var firstString = filteredStringList.First();
         }
     }
 }

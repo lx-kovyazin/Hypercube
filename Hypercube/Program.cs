@@ -1,31 +1,30 @@
-﻿using System;
-using System.Linq;
+﻿using Hypercube.Forms;
+using System;
 using System.Windows.Forms;
-
-using Database;
 
 namespace Hypercube
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var mainWindow = new MainWindow();
+            var mainWindow = new BrowserForm();
+            Application.Run(mainWindow);
 
-            using (var databaseContent = new DatabaseContent())
-            {
-                var users = databaseContent.Users.ToList();
-                mainWindow.SetGridData(users);
+            //using (var databaseContent = new DatabaseContent())
+            //{
+            //    var users = databaseContent.Users.ToList();
+            //    mainWindow.SetGridData(users);
 
-                Application.Run(mainWindow);
-            }
+
+            //}
         }
     }
 }
