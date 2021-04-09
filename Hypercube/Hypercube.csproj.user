@@ -11,6 +11,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup>
-    <ReferencePath>D:\GitHub\Hypercube\Lib\Debug\;D:\GitHub\Hypercube\Lib\Release\</ReferencePath>
+    <ReferencePath>
+    </ReferencePath>
   </PropertyGroup>
 </Project>
