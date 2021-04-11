@@ -47,9 +47,6 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Model\Cube.cs" />
     <Compile Include="Model\Dimension.cs" />
-    <Compile Include="Model\DimensionTree.cs" />
-    <Compile Include="Model\FixedCube.cs" />
-    <Compile Include="Model\FixedDimention.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="MetaInfo.cs" />
     <Compile Include="ICommandProvider.cs" />
