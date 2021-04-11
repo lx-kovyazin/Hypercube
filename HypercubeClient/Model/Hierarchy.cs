@@ -14,7 +14,7 @@ namespace Hypercube.Client.Model
         protected AdomdHierarchy hierarchy;
 
         protected Hierarchy(AdomdHierarchy hierarchy)
-            => this.hierarchy = hierarchy;
+            => this.hierarchy = hierarchy ?? throw new ArgumentNullException(nameof(hierarchy));
 
         public string FriendlyName => hierarchy.Caption;
         public string UniqueName => hierarchy.UniqueName;
@@ -29,7 +29,7 @@ namespace Hypercube.Client.Model
     }
 
     public class AttributeHierarchy
-            : Hierarchy
+        : Hierarchy
     {
         public AttributeHierarchy(AdomdHierarchy hierarchy)
             : base(hierarchy)
