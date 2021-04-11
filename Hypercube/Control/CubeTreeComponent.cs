@@ -33,18 +33,26 @@ namespace Hypercube.Control
             };
         }
 
+        private static void AddHierarchy(CubeTreeNode dimensionNode, Hierarchy hierarchy)
+        {
+            var hierarchyNode = new CubeTreeNode(hierarchy);
+            dimensionNode.Nodes.Add(hierarchyNode);
+            if (hierarchy is UserHierarchy userHierarchy)
+                userHierarchy.Levels.ForEach(level => hierarchyNode.Nodes.Add(new CubeTreeNode(level)));
+        }
+
         private static void AddDimension(CubeTreeNode cubeNode, Dimension dimension)
         {
             var dimensionNode = new CubeTreeNode(dimension);
             cubeNode.Nodes.Add(dimensionNode);
-            dimension.Hierarchies.ForEach(hierarchy => dimensionNode.Nodes.Add(new CubeTreeNode(hierarchy)));
+            dimension.Hierarchies.ForEach(hierarchy => AddHierarchy(dimensionNode, hierarchy));
+
         }
 
         private static void AddMeasure(CubeTreeNode cubeNode, Measure measure)
         {
             var measureNode = new CubeTreeNode(measure);
             cubeNode.Nodes.Add(measureNode);
-            //measure. Hierarchies.ForEach(hierarchy => dimensionNode.Nodes.Add(new CubeTreeNode(hierarchy)));
         }
 
         private void FillTree()

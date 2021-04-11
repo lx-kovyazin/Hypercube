@@ -59,7 +59,7 @@ namespace Hypercube.Control
             // 
             this.serverTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.serverTextBox.Depth = 0;
-            this.serverTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.serverTextBox.Font = new System.Drawing.Font("Roboto", 12F);
             this.serverTextBox.Hint = "Cервер";
             this.serverTextBox.Location = new System.Drawing.Point(45, 96);
             this.serverTextBox.MaxLength = 50;

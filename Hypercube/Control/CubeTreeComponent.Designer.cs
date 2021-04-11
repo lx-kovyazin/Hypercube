@@ -42,7 +42,7 @@ namespace Hypercube.Control
             this.cubeTreeView.ImageList = this.cubeTreeViewImageList;
             this.cubeTreeView.Location = new System.Drawing.Point(0, 0);
             this.cubeTreeView.Name = "cubeTreeView";
-            this.cubeTreeView.SelectedImageKey = "Cube.bmp";
+            this.cubeTreeView.SelectedImageKey = "CubeIcon.png";
             this.cubeTreeView.Size = new System.Drawing.Size(207, 512);
             this.cubeTreeView.TabIndex = 0;
             this.cubeTreeView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.CubeTreeView_ItemDrag);
@@ -56,6 +56,7 @@ namespace Hypercube.Control
             this.cubeTreeViewImageList.Images.SetKeyName(2, "DimensionIcon.png");
             this.cubeTreeViewImageList.Images.SetKeyName(3, "AttributeHierarchyIcon.png");
             this.cubeTreeViewImageList.Images.SetKeyName(4, "UserHierarchyIcon.png");
+            this.cubeTreeViewImageList.Images.SetKeyName(5, "HierarchyLevelIcon.png");
             // 
             // CubeTreeComponent
             // 

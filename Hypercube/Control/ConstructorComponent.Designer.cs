@@ -43,7 +43,8 @@ namespace Hypercube.Control
             this.dimensionMetaListView.Name = "dimensionMetaListView";
             this.dimensionMetaListView.Size = new System.Drawing.Size(269, 427);
             this.dimensionMetaListView.TabIndex = 2;
-            this.dimensionMetaListView.TypeName = "Hypercube.Client.Model.Hierarchy";
+            this.dimensionMetaListView.TypeNameList.Add("Hypercube.Client.Model.Hierarchy");
+            this.dimensionMetaListView.TypeNameList.Add("Hypercube.Client.Model.HierarchyLevel");
             // 
             // measureMetaListView
             // 
@@ -53,7 +54,7 @@ namespace Hypercube.Control
             this.measureMetaListView.Name = "measureMetaListView";
             this.measureMetaListView.Size = new System.Drawing.Size(269, 427);
             this.measureMetaListView.TabIndex = 1;
-            this.measureMetaListView.TypeName = "Hypercube.Client.Model.Measure";
+            this.measureMetaListView.TypeNameList.Add("Hypercube.Client.Model.Measure");
             // 
             // tableLayoutPanel
             // 
