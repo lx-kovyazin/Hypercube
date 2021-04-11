@@ -36,9 +36,9 @@ namespace Hypercube.Control
             this.constructorComponent = new Hypercube.Control.ConstructorComponent();
             this.queryTabPage = new System.Windows.Forms.TabPage();
             this.commandComponent = new Hypercube.Control.CommandComponent();
+            this.executeQueryTabPage = new System.Windows.Forms.TabPage();
             this.cubeTreeComponent = new Hypercube.Control.CubeTreeComponent();
             this.executeButton = new MaterialSkin.Controls.MaterialButton();
-            this.executeQueryTabPage = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,6 +115,7 @@ namespace Hypercube.Control
             // 
             this.constructorComponent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.constructorComponent.Location = new System.Drawing.Point(3, 3);
+            this.constructorComponent.Margin = new System.Windows.Forms.Padding(0);
             this.constructorComponent.Name = "constructorComponent";
             this.constructorComponent.Size = new System.Drawing.Size(443, 403);
             this.constructorComponent.TabIndex = 0;
@@ -137,6 +138,16 @@ namespace Hypercube.Control
             this.commandComponent.Name = "commandComponent";
             this.commandComponent.Size = new System.Drawing.Size(443, 403);
             this.commandComponent.TabIndex = 0;
+            // 
+            // executeQueryTabPage
+            // 
+            this.executeQueryTabPage.Location = new System.Drawing.Point(4, 28);
+            this.executeQueryTabPage.Name = "executeQueryTabPage";
+            this.executeQueryTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.executeQueryTabPage.Size = new System.Drawing.Size(449, 409);
+            this.executeQueryTabPage.TabIndex = 2;
+            this.executeQueryTabPage.Text = "Выполнить";
+            this.executeQueryTabPage.UseVisualStyleBackColor = true;
             // 
             // cubeTreeComponent
             // 
@@ -169,16 +180,6 @@ namespace Hypercube.Control
             this.executeButton.UseAccentColor = false;
             this.executeButton.UseVisualStyleBackColor = true;
             this.executeButton.Click += new System.EventHandler(this.ExecuteButton_Click);
-            // 
-            // executeQueryTabPage
-            // 
-            this.executeQueryTabPage.Location = new System.Drawing.Point(4, 28);
-            this.executeQueryTabPage.Name = "executeQueryTabPage";
-            this.executeQueryTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.executeQueryTabPage.Size = new System.Drawing.Size(449, 409);
-            this.executeQueryTabPage.TabIndex = 2;
-            this.executeQueryTabPage.Text = "Выполнить";
-            this.executeQueryTabPage.UseVisualStyleBackColor = true;
             // 
             // QueryConstructor
             // 

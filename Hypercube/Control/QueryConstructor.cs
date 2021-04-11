@@ -58,7 +58,11 @@ namespace Hypercube.Control
 
         private void ConstructorTabControl_Selected(object sender, TabControlEventArgs e)
         {
-            if (e.TabPage.Equals(queryTabPage))
+            if (
+                e.TabPage.Equals(queryTabPage)
+                &&   ( constructorComponent.dimensionMetaListView.fixedListView.Items.Count > 0
+                    && constructorComponent.measureMetaListView.fixedListView.Items.Count > 0
+               ))
                 commandComponent.scintilla.Text = PrepareCommand().Command;
         }
 

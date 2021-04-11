@@ -19,6 +19,7 @@ namespace Hypercube.Control
         {
             InitializeComponent();
             hypercubeClientAssembly = Assembly.Load("HypercubeClient");
+            ResizeHeader();
         }
 
         [Description("The name of a list view.")]
@@ -31,6 +32,12 @@ namespace Hypercube.Control
         public string TypeName { get; set; }
 
         private Type MetaType => hypercubeClientAssembly.GetType(TypeName);
+
+        private void ResizeHeader()
+        {
+            const int MAGIC_SIZE = -2;
+            fixedListHeader.Width = MAGIC_SIZE;
+        }
 
         private void FixedListView_ItemDrag(object sender, ItemDragEventArgs e)
         {
@@ -82,6 +89,11 @@ namespace Hypercube.Control
         {
             if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
                 fixedListView.SelectedItems.Cast<ListViewItem>().ToList().ForEach(item => item.Remove());
+        }
+
+        private void FixedListView_Resize(object sender, EventArgs e)
+        {
+            ResizeHeader();
         }
     }
 }

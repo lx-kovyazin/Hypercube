@@ -43,7 +43,7 @@ namespace Hypercube.Control
             this.connectButton.DrawShadows = true;
             this.connectButton.HighEmphasis = true;
             this.connectButton.Icon = null;
-            this.connectButton.Location = new System.Drawing.Point(315, 119);
+            this.connectButton.Location = new System.Drawing.Point(319, 103);
             this.connectButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.connectButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.connectButton.Name = "connectButton";
@@ -59,17 +59,16 @@ namespace Hypercube.Control
             // 
             this.serverTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.serverTextBox.Depth = 0;
-            this.serverTextBox.Font = new System.Drawing.Font("Roboto", 12F);
-            this.serverTextBox.Hint = "Введите сервер";
-            this.serverTextBox.Location = new System.Drawing.Point(41, 119);
+            this.serverTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.serverTextBox.Hint = "Cервер";
+            this.serverTextBox.Location = new System.Drawing.Point(45, 96);
             this.serverTextBox.MaxLength = 50;
             this.serverTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.serverTextBox.Multiline = false;
             this.serverTextBox.Name = "serverTextBox";
-            this.serverTextBox.Size = new System.Drawing.Size(267, 36);
+            this.serverTextBox.Size = new System.Drawing.Size(267, 50);
             this.serverTextBox.TabIndex = 1;
             this.serverTextBox.Text = "";
-            this.serverTextBox.UseTallSize = false;
             // 
             // catalogComboBox
             // 
@@ -78,24 +77,23 @@ namespace Hypercube.Control
             this.catalogComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.catalogComboBox.Depth = 0;
             this.catalogComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.catalogComboBox.DropDownHeight = 118;
+            this.catalogComboBox.DropDownHeight = 174;
             this.catalogComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.catalogComboBox.DropDownWidth = 121;
             this.catalogComboBox.Enabled = false;
             this.catalogComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.catalogComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.catalogComboBox.FormattingEnabled = true;
-            this.catalogComboBox.Hint = "Выберите каталог";
+            this.catalogComboBox.Hint = "Каталог";
             this.catalogComboBox.IntegralHeight = false;
-            this.catalogComboBox.ItemHeight = 29;
-            this.catalogComboBox.Location = new System.Drawing.Point(41, 161);
+            this.catalogComboBox.ItemHeight = 43;
+            this.catalogComboBox.Location = new System.Drawing.Point(45, 152);
             this.catalogComboBox.MaxDropDownItems = 4;
             this.catalogComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.catalogComboBox.Name = "catalogComboBox";
-            this.catalogComboBox.Size = new System.Drawing.Size(267, 35);
+            this.catalogComboBox.Size = new System.Drawing.Size(267, 49);
             this.catalogComboBox.StartIndex = 0;
             this.catalogComboBox.TabIndex = 4;
-            this.catalogComboBox.UseTallSize = false;
             this.catalogComboBox.SelectedIndexChanged += new System.EventHandler(this.CatalogComboBox_SelectedIndexChanged);
             // 
             // cubeComboBox
@@ -105,24 +103,23 @@ namespace Hypercube.Control
             this.cubeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cubeComboBox.Depth = 0;
             this.cubeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cubeComboBox.DropDownHeight = 118;
+            this.cubeComboBox.DropDownHeight = 174;
             this.cubeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cubeComboBox.DropDownWidth = 121;
             this.cubeComboBox.Enabled = false;
             this.cubeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cubeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cubeComboBox.FormattingEnabled = true;
-            this.cubeComboBox.Hint = "Выберите куб";
+            this.cubeComboBox.Hint = "Гиперкуб";
             this.cubeComboBox.IntegralHeight = false;
-            this.cubeComboBox.ItemHeight = 29;
-            this.cubeComboBox.Location = new System.Drawing.Point(41, 202);
+            this.cubeComboBox.ItemHeight = 43;
+            this.cubeComboBox.Location = new System.Drawing.Point(45, 207);
             this.cubeComboBox.MaxDropDownItems = 4;
             this.cubeComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.cubeComboBox.Name = "cubeComboBox";
-            this.cubeComboBox.Size = new System.Drawing.Size(267, 35);
+            this.cubeComboBox.Size = new System.Drawing.Size(267, 49);
             this.cubeComboBox.StartIndex = 0;
             this.cubeComboBox.TabIndex = 4;
-            this.cubeComboBox.UseTallSize = false;
             this.cubeComboBox.SelectedIndexChanged += new System.EventHandler(this.CubeComboBox_SelectedIndexChanged);
             // 
             // connectionLabel

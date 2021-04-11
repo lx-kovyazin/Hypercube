@@ -44,6 +44,8 @@ namespace Hypercube.Control
             this.fixedListView.Depth = 0;
             this.fixedListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fixedListView.FullRowSelect = true;
+            this.fixedListView.GridLines = true;
+            this.fixedListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.fixedListView.HideSelection = false;
             this.fixedListView.Location = new System.Drawing.Point(0, 0);
             this.fixedListView.MinimumSize = new System.Drawing.Size(200, 100);
@@ -59,6 +61,7 @@ namespace Hypercube.Control
             this.fixedListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.FixedListView_DragDrop);
             this.fixedListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.FixedListView_DragEnter);
             this.fixedListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FixedListView_KeyUp);
+            this.fixedListView.Resize += new System.EventHandler(this.FixedListView_Resize);
             // 
             // fixedListHeader
             // 
