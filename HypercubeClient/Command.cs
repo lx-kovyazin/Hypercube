@@ -27,9 +27,9 @@ namespace Hypercube.Client
             return new AdomdCommand(commandProvider.Command, client.Connection);
         }
 
-        public CellSet ExecuteCellSet() => Create().Start().ExecuteCellSet().Stop();
-        public AdomdDataReader ExecuteReader() => Create().ExecuteReader();
-        public XmlReader ExecuteXmlReader() => Create().ExecuteXmlReader();
-        public int ExecuteNonQuery() => Create().ExecuteNonQuery();
+        public CellSet ExecuteCellSet() => Create().Start().ExecuteCellSet().Stop(out _);
+        public AdomdDataReader ExecuteReader() => Create().Start().ExecuteReader().Stop(out _);
+        public XmlReader ExecuteXmlReader() => Create().Start().ExecuteXmlReader().Stop(out _);
+        public int ExecuteNonQuery() => Create().Start().ExecuteNonQuery().Stop(out _);
     }
 }

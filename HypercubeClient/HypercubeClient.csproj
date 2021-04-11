@@ -55,7 +55,7 @@
     <Compile Include="Model\IMetaModel.cs" />
     <Compile Include="Model\Measure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\StopwatchExtensions.cs" />
+    <Compile Include="Extensions\StopwatchHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
