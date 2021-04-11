@@ -36,7 +36,6 @@ namespace Hypercube.Control
             this.constructorComponent = new Hypercube.Control.ConstructorComponent();
             this.queryTabPage = new System.Windows.Forms.TabPage();
             this.commandComponent = new Hypercube.Control.CommandComponent();
-            this.executeQueryTabPage = new System.Windows.Forms.TabPage();
             this.cubeTreeComponent = new Hypercube.Control.CubeTreeComponent();
             this.executeButton = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -88,7 +87,6 @@ namespace Hypercube.Control
             | System.Windows.Forms.AnchorStyles.Right)));
             this.constructorTabControl.Controls.Add(this.constructorTabPage);
             this.constructorTabControl.Controls.Add(this.queryTabPage);
-            this.constructorTabControl.Controls.Add(this.executeQueryTabPage);
             this.constructorTabControl.Depth = 0;
             this.constructorTabControl.Location = new System.Drawing.Point(3, 36);
             this.constructorTabControl.MouseState = MaterialSkin.MouseState.HOVER;
@@ -138,16 +136,6 @@ namespace Hypercube.Control
             this.commandComponent.Name = "commandComponent";
             this.commandComponent.Size = new System.Drawing.Size(443, 403);
             this.commandComponent.TabIndex = 0;
-            // 
-            // executeQueryTabPage
-            // 
-            this.executeQueryTabPage.Location = new System.Drawing.Point(4, 28);
-            this.executeQueryTabPage.Name = "executeQueryTabPage";
-            this.executeQueryTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.executeQueryTabPage.Size = new System.Drawing.Size(449, 409);
-            this.executeQueryTabPage.TabIndex = 2;
-            this.executeQueryTabPage.Text = "Выполнить";
-            this.executeQueryTabPage.UseVisualStyleBackColor = true;
             // 
             // cubeTreeComponent
             // 
@@ -210,6 +198,5 @@ namespace Hypercube.Control
         private MaterialSkin.Controls.MaterialTabSelector constructorTabSelector;
         private CubeTreeComponent cubeTreeComponent;
         private MaterialSkin.Controls.MaterialButton executeButton;
-        private System.Windows.Forms.TabPage executeQueryTabPage;
     }
 }
