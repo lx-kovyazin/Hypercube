@@ -21,8 +21,6 @@ namespace Hypercube
         public AdomdGrid()
         {
             InitializeComponent();
-
-
         }
 
         #region Helper methods
@@ -126,6 +124,14 @@ namespace Hypercube
             ColumnsCount = iRowDims + iNumCols;
             RowsCount = iColDims + iNumRows;
 
+            string test = set.OlapInfo.AxesInfo.Axes[1].Hierarchies[0].Name;
+
+            for (int iCol = 0; iCol < iRowDims; iCol++)
+            {
+                string[] sName = set.OlapInfo.AxesInfo.Axes[1].Hierarchies[iCol].Name.Split('.');
+                SetHeaderValue(0, iCol, sName[1].Trim(new Char[] { '[', ']' }));
+            }
+
             // Set all of the column headers
             for (int iCol = 0; iCol < iNumCols; iCol++)
             {
@@ -148,7 +154,7 @@ namespace Hypercube
                     for (int iMember = 0; iMember < iRowDims; iMember++)
                     {
                         string sName = set.Axes[1].Positions[iRow].Members[iMember].Caption;
-                        SetHeaderValue(iRow + iColDims, iMember, sName);
+                        SetCellValue(iRow + iColDims, iMember, sName);
                     }
                 }
             }
@@ -320,7 +326,6 @@ namespace Hypercube
         {
             CellSetInfo csInfo = new CellSetInfo
             {
-
                 // find the number of dimensions on the Rows and columns
                 ColDims = moSet.OlapInfo.AxesInfo.Axes[0].Hierarchies.Count,
                 RowDims = 0,
@@ -343,8 +348,5 @@ namespace Hypercube
 
             return csInfo;
         }
-
-
-
     }
 }
