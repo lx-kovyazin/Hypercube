@@ -135,15 +135,15 @@
     <None Include="Control\AdomdDimTree.cs">
       <SubType>Component</SubType>
     </None>
-    <Compile Include="Control\AdomdDimTree.Designer.cs">
+    <None Include="Control\AdomdDimTree.Designer.cs">
       <DependentUpon>AdomdDimTree.cs</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Control\AdomdFunctionsTree.cs">
       <SubType>Component</SubType>
     </None>
-    <Compile Include="Control\AdomdFunctionsTree.Designer.cs">
+    <None Include="Control\AdomdFunctionsTree.Designer.cs">
       <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Control\ADOMDGrid.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -153,15 +153,15 @@
     <None Include="Control\AdomdProperties.cs">
       <SubType>UserControl</SubType>
     </None>
-    <Compile Include="Control\AdomdProperties.Designer.cs">
+    <None Include="Control\AdomdProperties.Designer.cs">
       <DependentUpon>AdomdProperties.cs</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Forms\Command.cs">
       <SubType>Form</SubType>
     </None>
-    <Compile Include="Forms\Command.Designer.cs">
+    <None Include="Forms\Command.Designer.cs">
       <DependentUpon>Command.cs</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Forms\BrowserOld.cs">
       <SubType>Form</SubType>
     </None>
@@ -171,21 +171,21 @@
     <None Include="Forms\frmSchemaInfo.cs">
       <SubType>Form</SubType>
     </None>
-    <Compile Include="Forms\frmSchemaInfo.Designer.cs">
+    <None Include="Forms\frmSchemaInfo.Designer.cs">
       <DependentUpon>frmSchemaInfo.cs</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Forms\PropertiesDlg.cs">
       <SubType>Form</SubType>
     </None>
-    <Compile Include="Forms\PropertiesDlg.Designer.cs">
+    <None Include="Forms\PropertiesDlg.Designer.cs">
       <DependentUpon>PropertiesDlg.cs</DependentUpon>
-    </Compile>
+    </None>
     <None Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </None>
-    <Compile Include="Forms\MainWindow.Designer.cs">
+    <None Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
