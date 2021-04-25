@@ -132,15 +132,15 @@
     <Compile Include="Forms\BrowserForm.Designer.cs">
       <DependentUpon>BrowserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\AdomdDimTree.cs">
+    <None Include="Control\AdomdDimTree.cs">
       <SubType>Component</SubType>
-    </Compile>
+    </None>
     <Compile Include="Control\AdomdDimTree.Designer.cs">
       <DependentUpon>AdomdDimTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\AdomdFunctionsTree.cs">
+    <None Include="Control\AdomdFunctionsTree.cs">
       <SubType>Component</SubType>
-    </Compile>
+    </None>
     <Compile Include="Control\AdomdFunctionsTree.Designer.cs">
       <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
     </Compile>
@@ -150,15 +150,15 @@
     <Compile Include="Control\ADOMDGrid.Designer.cs">
       <DependentUpon>ADOMDGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\AdomdProperties.cs">
+    <None Include="Control\AdomdProperties.cs">
       <SubType>UserControl</SubType>
-    </Compile>
+    </None>
     <Compile Include="Control\AdomdProperties.Designer.cs">
       <DependentUpon>AdomdProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Command.cs">
+    <None Include="Forms\Command.cs">
       <SubType>Form</SubType>
-    </Compile>
+    </None>
     <Compile Include="Forms\Command.Designer.cs">
       <DependentUpon>Command.cs</DependentUpon>
     </Compile>
@@ -168,21 +168,21 @@
     <None Include="Forms\BrowserOld.Designer.cs">
       <DependentUpon>BrowserOld.cs</DependentUpon>
     </None>
-    <Compile Include="Forms\frmSchemaInfo.cs">
+    <None Include="Forms\frmSchemaInfo.cs">
       <SubType>Form</SubType>
-    </Compile>
+    </None>
     <Compile Include="Forms\frmSchemaInfo.Designer.cs">
       <DependentUpon>frmSchemaInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PropertiesDlg.cs">
+    <None Include="Forms\PropertiesDlg.cs">
       <SubType>Form</SubType>
-    </Compile>
+    </None>
     <Compile Include="Forms\PropertiesDlg.Designer.cs">
       <DependentUpon>PropertiesDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainWindow.cs">
+    <None Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
-    </Compile>
+    </None>
     <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
@@ -198,7 +198,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="TableData.cs" />
+    <None Include="TableData.cs" />
     <EmbeddedResource Include="Control\AboutComponent.resx">
       <DependentUpon>AboutComponent.cs</DependentUpon>
     </EmbeddedResource>
