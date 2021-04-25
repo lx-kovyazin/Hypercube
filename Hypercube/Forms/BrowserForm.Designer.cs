@@ -42,6 +42,7 @@
             this.aboutTabPage = new System.Windows.Forms.TabPage();
             this.aboutComponent = new Hypercube.Control.AboutComponent();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.methodsPage = new System.Windows.Forms.TabPage();
             this.mainTabControl.SuspendLayout();
             this.connectionPage.SuspendLayout();
             this.constructorTabPage.SuspendLayout();
@@ -55,6 +56,7 @@
             this.mainTabControl.Controls.Add(this.connectionPage);
             this.mainTabControl.Controls.Add(this.constructorTabPage);
             this.mainTabControl.Controls.Add(this.dataSetPage);
+            this.mainTabControl.Controls.Add(this.methodsPage);
             this.mainTabControl.Controls.Add(this.settingsTabPage);
             this.mainTabControl.Controls.Add(this.aboutTabPage);
             this.mainTabControl.Depth = 0;
@@ -186,6 +188,16 @@
             this.imageList.Images.SetKeyName(3, "AboutIcon.png");
             this.imageList.Images.SetKeyName(4, "DataSetIcon.png");
             // 
+            // methodsPage
+            // 
+            this.methodsPage.Location = new System.Drawing.Point(4, 31);
+            this.methodsPage.Name = "methodsPage";
+            this.methodsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.methodsPage.Size = new System.Drawing.Size(853, 539);
+            this.methodsPage.TabIndex = 5;
+            this.methodsPage.Text = "Методы";
+            this.methodsPage.UseVisualStyleBackColor = true;
+            // 
             // BrowserForm
             // 
             this.ClientSize = new System.Drawing.Size(867, 580);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.TabPage dataSetPage;
         public AdomdGrid adomdGrid;
+        private System.Windows.Forms.TabPage methodsPage;
     }
 }
