@@ -282,8 +282,8 @@ namespace Hypercube
 
 
 
-                    PropertiesDlg dlg = new PropertiesDlg(oCell);
-                    dlg.Show();
+                    //PropertiesDlg dlg = new PropertiesDlg(oCell);
+                    //dlg.Show();
                 }
                 else
                 {
