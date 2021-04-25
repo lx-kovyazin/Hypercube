@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hypercube.Client.Model;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -40,6 +41,12 @@ namespace Hypercube.Control
             }
 
             return data;
+        }
+
+        internal static object GetDragMetaData<T>(this DragEventArgs e)
+            where T : IMetaModel
+        {
+            return e.GetDragMetaData(typeof(T));
         }
     }
 }

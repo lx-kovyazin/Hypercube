@@ -88,6 +88,24 @@
       <DependentUpon>CubeTreeComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\CubeTreeNode.cs" />
+    <Compile Include="Control\Filter\FilterComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Filter\FilterComponent.Designer.cs">
+      <DependentUpon>FilterComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Filter\FilterListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\Filter\FilterListView.Designer.cs">
+      <DependentUpon>FilterListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Filter\FilterListViewHierarchySubItem.cs" />
+    <Compile Include="Control\Filter\FilterListViewItem.cs" />
+    <Compile Include="Control\Filter\FilterListViewOperatorSubItem.cs" />
+    <Compile Include="Control\Filter\FilterListViewSubItem.cs" />
+    <Compile Include="Control\Filter\FilterListViewValueSubItem.cs" />
+    <Compile Include="Control\Filter\IFilterListViewSubItem.cs" />
     <Compile Include="Control\FixedMetaListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\CubeTreeComponent.resx">
       <DependentUpon>CubeTreeComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Filter\FilterComponent.resx">
+      <DependentUpon>FilterComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Filter\FilterListView.resx">
+      <DependentUpon>FilterListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FixedMetaListView.resx">
       <DependentUpon>FixedMetaListView.cs</DependentUpon>

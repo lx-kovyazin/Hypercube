@@ -14,7 +14,8 @@ using System.Windows.Forms;
 
 namespace Hypercube.Control
 {
-    public partial class FixedMetaListView : UserControl
+    public partial class FixedMetaListView
+        : UserControl
     {
         private readonly Assembly hypercubeClientAssembly;
 
@@ -78,7 +79,6 @@ namespace Hypercube.Control
             }
         }
 
-
         private void HandleLinkDragDrop(object sender, DragEventArgs e)
         {
             foreach (var metaType in GetMetaType())
@@ -134,7 +134,6 @@ namespace Hypercube.Control
                 default:
                     break;
             }
-                
         }
 
         private void FixedListView_KeyUp(object sender, KeyEventArgs e)
@@ -144,8 +143,6 @@ namespace Hypercube.Control
         }
 
         private void FixedListView_Resize(object sender, EventArgs e)
-        {
-            ResizeHeader();
-        }
+            => ResizeHeader();
     }
 }
