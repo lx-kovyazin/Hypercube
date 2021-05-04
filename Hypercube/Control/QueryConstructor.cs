@@ -1,7 +1,10 @@
 ﻿using Hypercube.Client;
-using MDXBuilderLibrary.mdx;
-using MDXBuilderLibrary.mdx.axisitems;
-using MDXBuilderLibrary.mdx.axisitems.Functions;
+using MdxBuilder;
+using MdxBuilder.Builder;
+using MdxBuilder.Entity;
+using MdxBuilder.Entity.Function.Set;
+using MdxBuilder.Entity.Operator.Set;
+using MdxBuilder.Utils;
 using Microsoft.AnalysisServices.AdomdClient;
 using System;
 using System.Collections.Generic;
@@ -12,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Crossjoin = MdxBuilder.Entity.Operator.Set.Crossjoin;
 using HypercubeClient = Hypercube.Client.Client;
 
 namespace Hypercube.Control
@@ -28,32 +31,39 @@ namespace Hypercube.Control
 
         private MdxCommandProvider PrepareCommand()
         {
-            var mdxProvider = new MdxCommandProvider();
-
-            mdxProvider.Builder.CubeName = HypercubeClient.Instance.MetaInfo.CurrentCube.UniqueName;
-
             var dimensionMetaListViewItems = constructorComponent.dimensionMetaListView.fixedListView.Items.Cast<FixedMetaListViewItem>();
             var measureMetaListViewItems = constructorComponent.measureMetaListView.fixedListView.Items.Cast<FixedMetaListViewItem>();
+            var cube = new Cube(HypercubeClient.Instance.MetaInfo.CurrentCube.UniqueName);
 
-            //Column Axis
-            var columnAxis = new MDXAxis(MDXAxis.COLUMN_AXIS);
-            var columnSetList = new SetAxisItem(null);
-            foreach (var item in measureMetaListViewItems)
-                columnSetList.AddAxisItem(new MemberAxisItem(item.Model.UniqueName));
-            columnAxis.AxisItem = new NonEmpty(columnSetList);
+            List<UniqueEntity> listConverter
+                (IEnumerable<FixedMetaListViewItem> list)
+                    => list.Select(item => new UniqueEntity(item.Model.UniqueName)).ToList();
 
-            //Row Axis
-            var rowAxis = new MDXAxis(MDXAxis.ROW_AXIS);
-            var rowCrossJoin = new CrossJoin(null);
-            foreach (var item in dimensionMetaListViewItems)
-                rowCrossJoin.AddCrossJointTo(new Members(new MemberAxisItem(item.Model.UniqueName)));
-            rowAxis.AxisItem = new NonEmpty(rowCrossJoin);
+            var measureSet = new SetBuilder();
+            listConverter(measureMetaListViewItems)
+                .ForEach(it => measureSet.Add(tb => tb.Add(it)));
 
-            //Add Axis to Builder
-            mdxProvider.Builder.AddAxis(columnAxis);
-            mdxProvider.Builder.AddAxis(rowAxis);
+            var dimensions = listConverter(dimensionMetaListViewItems)
+                .Select(item => AllMembers.Do(item)).AsOp();
 
-            return mdxProvider;
+            var query
+                = Mdx.Create()
+                     .Select(seb => seb
+                         .Add(aabCols => aabCols
+                             .SetDimension(AliasedAxis.Alias.Columns)
+                             .Set(measureSet.Build())
+                         )
+                         .Add(aabRows => aabRows
+                             .SetDimension(AliasedAxis.Alias.Rows)
+                             .Set(sb => sb.Add(tb => tb.Add(
+                                 Crossjoin.Do(dimensions)
+                        ))))
+                     )
+                     .From(feb => feb.Set(sc => sc.Set(cube)))
+                     .Build()
+                     ;
+
+            return new MdxCommandProvider(query);
         }
 
         private void ConstructorTabControl_Selected(object sender, TabControlEventArgs e)

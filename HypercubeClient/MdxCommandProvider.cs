@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MDXBuilderLibrary.mdx;
+﻿using MdxBuilder;
 
 namespace Hypercube.Client
 {
     public class MdxCommandProvider
         : ICommandProvider
     {
-        private readonly MDXBuilder mdxBuilder;
+        private readonly string command;
 
-        public MdxCommandProvider() => mdxBuilder = new MDXBuilder();
+        public MdxCommandProvider(Mdx.Query query)
+            : this(query.Body)
+        { }
 
-        public MDXBuilder Builder => mdxBuilder;
+        public MdxCommandProvider(string mdxQuery)
+            => command = mdxQuery;
+
+        public static Mdx.QueryBuilder Builder => Mdx.Create();
 
         #region ICommandProvider implementation.
         public string Name => nameof(MdxCommandProvider);
-        public string Command => mdxBuilder.Build();
+        public string Command => command;
         #endregion
     }
 }
