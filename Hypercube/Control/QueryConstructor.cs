@@ -1,4 +1,5 @@
 ﻿using Hypercube.Client;
+using Hypercube.Control.Filter;
 using MDXBuilderLibrary.mdx;
 using MDXBuilderLibrary.mdx.axisitems;
 using MDXBuilderLibrary.mdx.axisitems.Functions;
@@ -52,6 +53,39 @@ namespace Hypercube.Control
             //Add Axis to Builder
             mdxProvider.Builder.AddAxis(columnAxis);
             mdxProvider.Builder.AddAxis(rowAxis);
+
+            //mdxProvider.Builder.
+
+            //var filterListItems
+            //    = constructorComponent.filterComponent
+            //                          .filterListView
+            //                          .Items
+            //                          .Cast<FilterListViewItem>();
+            //foreach (var item in filterListItems)
+            //{
+            //    var filterListSubItems = item.SubItems.Cast<FilterListViewSubItem>();
+            //    foreach (var subItem in filterListSubItems)
+            //    {
+            //        switch (subItem)
+            //        {
+            //            case FilterListViewHierarchySubItem hsi:
+            //                hsi.Hierarchy;
+            //                break;
+
+            //            case FilterListViewOperatorSubItem osi:
+            //                osi.Text;
+            //                break;
+
+            //            case FilterListViewValueSubItem vsi:
+            //                vsi.SelectedMembers;
+            //                break;
+
+            //            default:
+            //                break;
+            //        }
+            //    }
+            //}
+
 
             return mdxProvider;
         }

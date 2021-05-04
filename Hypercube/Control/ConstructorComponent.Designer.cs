@@ -101,6 +101,6 @@ namespace Hypercube.Control
         internal FixedMetaListView dimensionMetaListView;
         internal FixedMetaListView measureMetaListView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private Filter.FilterComponent filterComponent;
+        public Filter.FilterComponent filterComponent;
     }
 }

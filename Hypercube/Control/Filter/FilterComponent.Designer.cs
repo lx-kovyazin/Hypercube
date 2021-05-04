@@ -63,13 +63,24 @@
             // 
             // filterListView
             // 
+            this.filterListView.AllowDrop = true;
+            this.filterListView.AutoSizeTable = false;
+            this.filterListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.filterListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.filterListView.Depth = 0;
             this.filterListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterListView.FullRowSelect = true;
             this.filterListView.HideSelection = false;
             this.filterListView.Location = new System.Drawing.Point(3, 22);
+            this.filterListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.filterListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.filterListView.MouseState = MaterialSkin.MouseState.OUT;
             this.filterListView.Name = "filterListView";
+            this.filterListView.OwnerDraw = true;
             this.filterListView.Size = new System.Drawing.Size(634, 175);
             this.filterListView.TabIndex = 1;
             this.filterListView.UseCompatibleStateImageBehavior = false;
+            this.filterListView.View = System.Windows.Forms.View.Details;
             // 
             // FilterComponent
             // 
@@ -88,6 +99,6 @@
 
         private MaterialSkin.Controls.MaterialLabel setupFilterLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private FilterListView filterListView;
+        public FilterListView filterListView;
     }
 }

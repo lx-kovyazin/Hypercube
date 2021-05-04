@@ -32,6 +32,8 @@ namespace Hypercube.Control.Filter
             Container = valueCheckedListBox;
         }
 
+        public List<Member> SelectedMembers => selectedMembers;
+
         private void AddRangeItem(IEnumerable<MaterialCheckbox> collection)
             => collection.ToList().ForEach(cb => valueCheckedListBox.Items.Add(cb));
 
