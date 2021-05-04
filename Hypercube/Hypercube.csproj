@@ -391,9 +391,9 @@
       <Project>{dad382c6-7eaa-4820-b19c-43fb973d7e09}</Project>
       <Name>HypercubeClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ThirdPartyFork\MDXBuilderLibrary\MDXBuilderLibrary.csproj">
-      <Project>{e052af29-8cf5-45ac-b22f-6e7b7539af94}</Project>
-      <Name>MDXBuilderLibrary</Name>
+    <ProjectReference Include="..\MdxBuilder\MdxBuilder\MdxBuilder.csproj">
+      <Project>{e0798c8e-3551-4238-98ad-0d45d9f01a99}</Project>
+      <Name>MdxBuilder</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
