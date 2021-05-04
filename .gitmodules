@@ -1,0 +1,3 @@
+[submodule "MdxBuilder"]
+	path = MdxBuilder
+	url = https://github.com/Ortholite/MdxBuilder.git
