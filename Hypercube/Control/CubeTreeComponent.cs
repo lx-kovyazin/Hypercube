@@ -71,7 +71,7 @@ namespace Hypercube.Control
         {
             if (e.Button == MouseButtons.Left)
             {
-                Debug.Print($"[Drag]: {(e.Item as CubeTreeNode).Tag}");
+                Debug.Print($"[{nameof(CubeTreeView_ItemDrag)}]: {(e.Item as CubeTreeNode).Tag}");
                 DoDragDrop((e.Item as CubeTreeNode).Tag, DragDropEffects.Link);
             }
         }
