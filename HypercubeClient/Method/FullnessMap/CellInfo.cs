@@ -1,43 +1,40 @@
 ﻿using System.Collections.Generic;
 
 /*using Hypercube.Client.Model;*/
-using Hierarchy = Microsoft.AnalysisServices.AdomdClient.OlapInfoHierarchyCollection;
+using Microsoft.AnalysisServices.AdomdClient;
 
 
 namespace Hypercube.Client.Method.FullnessMap
 {
-    class CellInfo
+    public class Info
     {
-        /*
-        public Dictionary<Hierarchy, string> Info
+        public Dictionary<string, string> Dimentions
         {
-            private set; get;
-        }
-        */
-
-        /* Для тестов <string, string> */
-        public Dictionary<string, string> Info
-        {
-            private set; get;
+            get; set;
         }
 
-        public float Factor
-        { 
-            private set; get; 
+        public Dictionary<string, string> Measures
+        {
+            get; set;
         }
 
-        /*
-        public CellInfo(Hierarchy hierarchy)
+        public Info() 
         {
-            Info = new Dictionary<Hierarchy, string>();
-            Factor = 0;
+            Dimentions = new Dictionary<string, string>();
+            Measures = new Dictionary<string, string>();
         }
-        */
+    }
 
-        public CellInfo(Hierarchy hierarchy)
+    public class CellInfo
+    {
+        public Info Info
         {
-            Info = new Dictionary<string, string>();
-            Factor = 0;
+            get; set;
+        }
+
+        public CellInfo()
+        {
+            Info = new Info();
         }
     }
 }
