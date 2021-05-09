@@ -65,6 +65,10 @@
       <Project>{dad382c6-7eaa-4820-b19c-43fb973d7e09}</Project>
       <Name>HypercubeClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MdxBuilder\MdxBuilder\MdxBuilder.csproj">
+      <Project>{E0798C8E-3551-4238-98AD-0D45D9F01A99}</Project>
+      <Name>MdxBuilder</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

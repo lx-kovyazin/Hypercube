@@ -167,7 +167,7 @@ namespace Hypercube.Control
             this.executeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.executeButton.UseAccentColor = false;
             this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.Click += new System.EventHandler(this.ExecuteButton_Click);
+
             // 
             // QueryConstructor
             // 

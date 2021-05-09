@@ -44,7 +44,7 @@ namespace Hypercube.Client
                 return false;
             }
             MetaInfo = new MetaInfo(this);
-            ConnectionChanged.Invoke();
+            ConnectionChanged?.Invoke();
             return true;
         }
 

@@ -36,17 +36,18 @@
             this.constructorTabPage = new System.Windows.Forms.TabPage();
             this.queryConstructor = new Hypercube.Control.QueryConstructor();
             this.dataSetPage = new System.Windows.Forms.TabPage();
-            this.adomdGrid = new Hypercube.AdomdGrid();
+            this.methodsPage = new System.Windows.Forms.TabPage();
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.settingsComponent = new Hypercube.Control.SettingsComponent();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
             this.aboutComponent = new Hypercube.Control.AboutComponent();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.methodsPage = new System.Windows.Forms.TabPage();
+            this.cubeView = new Hypercube.Control.CubeView();
             this.mainTabControl.SuspendLayout();
             this.connectionPage.SuspendLayout();
             this.constructorTabPage.SuspendLayout();
             this.dataSetPage.SuspendLayout();
+            this.methodsPage.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.aboutTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +113,7 @@
             // 
             // dataSetPage
             // 
-            this.dataSetPage.Controls.Add(this.adomdGrid);
+            this.dataSetPage.Controls.Add(this.cubeView);
             this.dataSetPage.ImageKey = "DataSetIcon.png";
             this.dataSetPage.Location = new System.Drawing.Point(4, 31);
             this.dataSetPage.Name = "dataSetPage";
@@ -122,21 +123,15 @@
             this.dataSetPage.Text = "Данные";
             this.dataSetPage.UseVisualStyleBackColor = true;
             // 
-            // adomdGrid
+            // methodsPage
             // 
-            this.adomdGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adomdGrid.GridToolTipActive = true;
-            this.adomdGrid.Location = new System.Drawing.Point(3, 3);
-            this.adomdGrid.Name = "adomdGrid";
-            this.adomdGrid.Size = new System.Drawing.Size(847, 533);
-            this.adomdGrid.SpecialKeys = ((SourceGrid3.GridSpecialKeys)(((((((SourceGrid3.GridSpecialKeys.Arrows | SourceGrid3.GridSpecialKeys.Tab) 
-            | SourceGrid3.GridSpecialKeys.PageDownUp) 
-            | SourceGrid3.GridSpecialKeys.Enter) 
-            | SourceGrid3.GridSpecialKeys.Escape) 
-            | SourceGrid3.GridSpecialKeys.Control) 
-            | SourceGrid3.GridSpecialKeys.Shift)));
-            this.adomdGrid.StyleGrid = null;
-            this.adomdGrid.TabIndex = 0;
+            this.methodsPage.Location = new System.Drawing.Point(4, 31);
+            this.methodsPage.Name = "methodsPage";
+            this.methodsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.methodsPage.Size = new System.Drawing.Size(853, 539);
+            this.methodsPage.TabIndex = 5;
+            this.methodsPage.Text = "Методы";
+            this.methodsPage.UseVisualStyleBackColor = true;
             // 
             // settingsTabPage
             // 
@@ -188,15 +183,13 @@
             this.imageList.Images.SetKeyName(3, "AboutIcon.png");
             this.imageList.Images.SetKeyName(4, "DataSetIcon.png");
             // 
-            // methodsPage
+            // cubeView1
             // 
-            this.methodsPage.Location = new System.Drawing.Point(4, 31);
-            this.methodsPage.Name = "methodsPage";
-            this.methodsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.methodsPage.Size = new System.Drawing.Size(853, 539);
-            this.methodsPage.TabIndex = 5;
-            this.methodsPage.Text = "Методы";
-            this.methodsPage.UseVisualStyleBackColor = true;
+            this.cubeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cubeView.Location = new System.Drawing.Point(3, 3);
+            this.cubeView.Name = "cubeView";
+            this.cubeView.Size = new System.Drawing.Size(847, 533);
+            this.cubeView.TabIndex = 0;
             // 
             // BrowserForm
             // 
@@ -212,6 +205,7 @@
             this.connectionPage.ResumeLayout(false);
             this.constructorTabPage.ResumeLayout(false);
             this.dataSetPage.ResumeLayout(false);
+            this.methodsPage.ResumeLayout(false);
             this.settingsTabPage.ResumeLayout(false);
             this.aboutTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -231,7 +225,7 @@
         private Control.SettingsComponent settingsComponent;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.TabPage dataSetPage;
-        public AdomdGrid adomdGrid;
         private System.Windows.Forms.TabPage methodsPage;
+        private Control.CubeView cubeView;
     }
 }

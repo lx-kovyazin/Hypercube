@@ -44,8 +44,17 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Data\AdomdData.cs" />
+    <Compile Include="Data\CellSetData.cs" />
+    <Compile Include="Data\ExtractedData.cs" />
+    <Compile Include="Data\Extractor\AdomdDataExtractor.cs" />
+    <Compile Include="Data\Extractor\CellSetDataExtractor.cs" />
+    <Compile Include="Data\Extractor\DataExtractor.cs" />
+    <Compile Include="Data\Extractor\IDataExtractor.cs" />
+    <Compile Include="Extensions\DebugHelper.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Model\AttributeHierarchy.cs" />
+    <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\Cube.cs" />
     <Compile Include="Model\Dimension.cs" />
     <Compile Include="Client.cs" />
@@ -68,6 +77,9 @@
     <PackageReference Include="Microsoft.AnalysisServices.AdomdClient.retail.amd64">
       <Version>19.20.1</Version>
     </PackageReference>
+    <PackageReference Include="morelinq">
+      <Version>3.3.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MdxBuilder\MdxBuilder\MdxBuilder.csproj">
@@ -75,5 +87,6 @@
       <Name>MdxBuilder</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

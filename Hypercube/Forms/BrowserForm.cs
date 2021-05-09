@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,8 +18,7 @@ namespace Hypercube.Forms
             InitializeComponent();
             InitializeMaterialSkinManager();
 
-            // TODO: Not working.
-            queryConstructor.DataCollected += adomdGrid.LoadData;
+            queryConstructor.DataCollected += cubeView.LoadData;
         }
 
         private void InitializeMaterialSkinManager()
