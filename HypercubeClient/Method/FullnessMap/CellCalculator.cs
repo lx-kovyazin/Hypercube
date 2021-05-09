@@ -8,21 +8,11 @@ namespace Hypercube.Client.Method.FullnessMap
 {
     public static class CellCalculator
     {
-        public static Cell Calculate(CellInfo info)
+        public static Cell Calculate(CellInfo info, params Model.Cell[] measurelist)
         {
-            int count = 0;
+            var factor = new FullnessFactor(FullnessFactor.Calculate(measurelist));
 
-            foreach (var value in info.Info.Measures)
-            {
-                if (!string.IsNullOrEmpty(value.Value))
-                {
-                    ++count;
-                }
-            }
-
-            float factor = count / info.Info.Measures.Count * 100.0f;
-
-            return new Cell(info, new FullnessFactor(factor));
+            return new Cell(info, factor);
         }
     }
 }

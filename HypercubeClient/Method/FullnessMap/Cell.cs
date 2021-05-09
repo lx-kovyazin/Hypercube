@@ -16,6 +16,21 @@ namespace Hypercube.Client.Method.FullnessMap
             get;
             private set;
         }
+
+        public static float Calculate(params Model.Cell[] list)
+        {
+            int count = 0;
+
+            foreach (var value in list)
+            {
+                if (!string.IsNullOrEmpty(value.UniqueName))
+                {
+                    ++count;
+                }
+            }
+
+            return count / list.Length * 100.0f;
+        }
     }
 
     public class Cell
