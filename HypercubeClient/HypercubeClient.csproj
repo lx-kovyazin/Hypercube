@@ -58,6 +58,11 @@
     <Compile Include="ICommandProvider.cs" />
     <Compile Include="MdxCommandProvider.cs" />
     <Compile Include="MetaInfo.cs" />
+    <Compile Include="Method\FullnessMap\Cell.cs" />
+    <Compile Include="Method\FullnessMap\CellCalculator.cs" />
+    <Compile Include="Method\FullnessMap\CellGenerator.cs" />
+    <Compile Include="Method\FullnessMap\CellInfo.cs" />
+    <Compile Include="Method\FullnessMap\Map.cs" />
     <Compile Include="Model\AttributeHierarchy.cs" />
     <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\Cube.cs" />
@@ -87,8 +92,6 @@
       <Name>MdxBuilder</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Method\FullnessMap\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
