@@ -88,6 +88,12 @@
       <DependentUpon>CubeTreeComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\CubeTreeNode.cs" />
+    <Compile Include="Control\CubeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CubeView.Designer.cs">
+      <DependentUpon>CubeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Filter\FilterComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,12 +150,6 @@
     <None Include="Control\AdomdFunctionsTree.Designer.cs">
       <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
     </None>
-    <Compile Include="Control\ADOMDGrid.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Control\ADOMDGrid.Designer.cs">
-      <DependentUpon>ADOMDGrid.cs</DependentUpon>
-    </Compile>
     <None Include="Control\AdomdProperties.cs">
       <SubType>UserControl</SubType>
     </None>

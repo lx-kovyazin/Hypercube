@@ -1,4 +1,5 @@
 ﻿using Hypercube.Client;
+using Hypercube.Client.Data.Extractor;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +10,7 @@ namespace Hypercube.Test
     [TestClass]
     public class HypercubeClientTest
     {
-        ConnectionString connectionString;
+        private ConnectionString connectionString;
 
         [TestInitialize]
         public void InitializeHypercubeClientTest()
@@ -47,12 +48,12 @@ namespace Hypercube.Test
         }
 
         [TestMethod]
-        public void FilterStringListTest()
+        public void CellExtractorTest()
         {
-            var capturedString = "ab";
-            var stringList = new List<string> { "abc", "abcd", "qwe" };
-            var filteredStringList = stringList.Where(str => str.StartsWith(capturedString)).ToList();
-            var firstString = filteredStringList.First();
+            var client = Client.Client.Instance;
+            client.Connect(connectionString);
+            const string query = "SELECT {([Measures].[Total Cases]), ([Measures].[New Cases])} ON COLUMNS, {([Date].[Date].AllMembers * [Location].[Continent].AllMembers * [Location].[Location].AllMembers)} ON ROWS FROM [CovidCube]";
+            CellSetDataExtractor.Do(client.CreateCommand(new MdxCommandProvider(query)).ExecuteCellSet());
         }
     }
 }

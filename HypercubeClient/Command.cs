@@ -27,9 +27,33 @@ namespace Hypercube.Client
             return new AdomdCommand(commandProvider.Command, client.Connection);
         }
 
+        public enum ExecMethod
+        {
+            CellSet,
+            AdomdDataReader,
+            XmlReader
+        }
+
         public CellSet ExecuteCellSet() => Create().Start().ExecuteCellSet().Stop(out _);
         public AdomdDataReader ExecuteReader() => Create().Start().ExecuteReader().Stop(out _);
         public XmlReader ExecuteXmlReader() => Create().Start().ExecuteXmlReader().Stop(out _);
+
+        public T Execute<T>()
+            where T : class
+        {
+            switch (typeof(T).Name)
+            {
+                case nameof(ExecMethod.CellSet):
+                    return ExecuteCellSet() as T;
+                case nameof(ExecMethod.AdomdDataReader):
+                    return ExecuteReader() as T;
+                case nameof(ExecMethod.XmlReader):
+                    return ExecuteXmlReader() as T;
+                default:
+                    throw new ArgumentException("Unexpected Case");
+            }
+        }
+
         public int ExecuteNonQuery() => Create().Start().ExecuteNonQuery().Stop(out _);
     }
 }

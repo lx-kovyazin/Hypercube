@@ -12,5 +12,12 @@ namespace Hypercube.Client.Extensions
         [SuppressMessage("Design", "CC0031:Check for null before calling a delegate", Justification = "Not required.")]
         public static string NotMatch(this string @string, Func<string, bool> pattern)
             => pattern(@string) ? null : @string;
+
+        public static bool IsNullOrEmptyOrWhiteSpace(this string @string)
+            => string.IsNullOrEmpty(@string)
+            || string.IsNullOrWhiteSpace(@string);
+
+        public static bool IsValuable(this string @string)
+            => !IsNullOrEmptyOrWhiteSpace(@string);
     }
 }

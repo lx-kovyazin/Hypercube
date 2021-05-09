@@ -1,4 +1,6 @@
 ﻿using Hypercube.Client;
+using Hypercube.Client.Data;
+using Hypercube.Client.Data.Extractor;
 using Hypercube.Control.Filter;
 using MdxBuilder;
 using MdxBuilder.Builder;
@@ -14,6 +16,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,10 +28,13 @@ namespace Hypercube.Control
 {
     public partial class QueryConstructor : UserControl
     {
-        public event Action<CellSet> DataCollected;
+        public event Action<ExtractedData> DataCollected;
 
         public QueryConstructor()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+            executeButton.Click += ExecuteButton_ClickAsync;
+        }
 
         private static UniqueEntity TransformFilterItem(FilterListViewItem item)
         {
@@ -135,9 +141,26 @@ namespace Hypercube.Control
                 commandComponent.scintilla.Text = PrepareCommand().Command;
         }
 
-        private void ExecuteButton_Click(object sender, EventArgs e)
+        private async void ExecuteButton_ClickAsync(object sender, EventArgs e)
         {
-            DataCollected.Invoke(HypercubeClient.Instance.CreateCommand(PrepareCommand()).ExecuteCellSet());
+            var provider = PrepareCommand();
+            var command = HypercubeClient.Instance.CreateCommand(provider);
+            var execMethod = Command.ExecMethod.CellSet;
+            ExtractedData data = null;
+            switch (execMethod)
+            {
+                case Command.ExecMethod.CellSet:
+                    data = await Task.Run(() => CellSetDataExtractor.Do(command.ExecuteCellSet()));
+                    break;
+                case Command.ExecMethod.AdomdDataReader:
+                    data = await Task.Run(() => AdomdDataExtractor.Do(command.ExecuteReader()));
+                    break;
+                case Command.ExecMethod.XmlReader:
+                    break;
+                default:
+                    break;
+            }
+            DataCollected.Invoke(data);
         }
     }
 }
