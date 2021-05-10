@@ -9,15 +9,26 @@ namespace Hypercube.Client.Model
     public class HierarchyLevel
         : IMetaModel
     {
-        protected readonly Level level;
+        private readonly string friendlyName;
+        private readonly string uniqueName;
+        private readonly Level level;
 
         public HierarchyLevel(Level level)
         {
-            this.level = level ?? throw new ArgumentNullException(nameof(level));                 
+            this.level   = level
+                         ?? throw new ArgumentNullException(nameof(level));
+            friendlyName = this.level.Caption;
+            uniqueName   = this.level.UniqueName;
         }
 
-        public string FriendlyName => level.Caption;
-        public string UniqueName => level.UniqueName;
+        public HierarchyLevel(string friendlyName, string uniqueName)
+        {
+            this.friendlyName = friendlyName;
+            this.uniqueName   = uniqueName;
+        }
+
+        public string FriendlyName => friendlyName;
+        public string UniqueName => uniqueName;
 
         public List<Member> Members => level.GetMembers()
                                             .Cast<AdomdMember>()

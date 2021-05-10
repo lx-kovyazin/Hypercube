@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Hypercube.Client.Model;
 using MdxBuilder.Entity;
@@ -47,7 +46,7 @@ namespace Hypercube.Client.Data.Extractor
         }
 
         private static (Measure[] Measures, List<Cell[]> CellsList)
-            ReadMeasures(CellSet set)
+            ReadMeasureData(CellSet set)
         {
             var measures
                 = set.Axes[(int)AliasedAxis.Alias.Columns]
@@ -73,7 +72,7 @@ namespace Hypercube.Client.Data.Extractor
         {
             return new CellSetData(
                 ReadDimensionData(dataMedium),
-                ReadMeasures(dataMedium)
+                ReadMeasureData(dataMedium)
             );
         }
     }

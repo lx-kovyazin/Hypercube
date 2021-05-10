@@ -11,20 +11,34 @@ namespace Hypercube.Client.Model
     public class Measure
         : IMetaModel
     {
+        private readonly string friendlyName;
+        private readonly string uniqueName;
         private readonly AdomdMeasure measure;
         private readonly AdomdMember  measureMember;
 
         public Measure(AdomdMeasure measure)
-            => this.measure = measure;
-        
-        public Measure(AdomdMember measureMember)
-            => this.measureMember = measureMember;
+        {
+            this.measure = measure
+                         ?? throw new ArgumentNullException(nameof(measure));
+            friendlyName = this.measure.Caption;
+            uniqueName   = this.measure.UniqueName;
+        }
 
-        public string FriendlyName => measure is null
-                                    ? measureMember.Caption
-                                    : measure.Caption;
-        public string UniqueName => measure is null
-                                    ? measureMember.UniqueName
-                                    : measure.UniqueName;
+        public Measure(AdomdMember measureMember)
+        {
+            this.measureMember = measureMember
+                ?? throw new ArgumentNullException(nameof(measureMember));
+            friendlyName       = this.measureMember.Caption;
+            uniqueName         = this.measureMember.UniqueName;
+        }
+
+        public Measure(string friendlyName, string uniqueName)
+        {
+            this.friendlyName = friendlyName;
+            this.uniqueName   = uniqueName;
+        }
+
+        public string FriendlyName => friendlyName;
+        public string UniqueName => uniqueName;
     }
 }

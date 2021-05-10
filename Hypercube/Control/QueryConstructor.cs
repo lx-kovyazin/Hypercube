@@ -145,9 +145,8 @@ namespace Hypercube.Control
         {
             var provider = PrepareCommand();
             var command = HypercubeClient.Instance.CreateCommand(provider);
-            var execMethod = Command.ExecMethod.CellSet;
             ExtractedData data = null;
-            switch (execMethod)
+            switch (Settings.ExecMethod)
             {
                 case Command.ExecMethod.CellSet:
                     data = await Task.Run(() => CellSetDataExtractor.Do(command.ExecuteCellSet()));

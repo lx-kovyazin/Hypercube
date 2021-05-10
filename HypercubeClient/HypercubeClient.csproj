@@ -52,6 +52,7 @@
     <Compile Include="Data\Extractor\DataExtractor.cs" />
     <Compile Include="Data\Extractor\IDataExtractor.cs" />
     <Compile Include="Extensions\DebugHelper.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Model\AttributeHierarchy.cs" />
     <Compile Include="Model\Cell.cs" />

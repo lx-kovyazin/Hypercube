@@ -1,5 +1,6 @@
 ﻿using Hypercube.Client;
 using Hypercube.Client.Data.Extractor;
+using Microsoft.AnalysisServices.AdomdClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -54,6 +55,15 @@ namespace Hypercube.Test
             client.Connect(connectionString);
             const string query = "SELECT {([Measures].[Total Cases]), ([Measures].[New Cases])} ON COLUMNS, {([Date].[Date].AllMembers * [Location].[Continent].AllMembers * [Location].[Location].AllMembers)} ON ROWS FROM [CovidCube]";
             CellSetDataExtractor.Do(client.CreateCommand(new MdxCommandProvider(query)).ExecuteCellSet());
+        }
+
+        [TestMethod]
+        public void AdomdDataExtractorTest()
+        {
+            var client = Client.Client.Instance;
+            client.Connect(connectionString);
+            const string query = "SELECT {([Measures].[Total Cases]), ([Measures].[New Cases])} ON COLUMNS, {([Date].[Date].AllMembers * [Location].[Continent].AllMembers * [Location].[Location].AllMembers)} ON ROWS FROM [CovidCube]";
+            AdomdDataExtractor.Do(client.CreateCommand(new MdxCommandProvider(query)).Execute<AdomdDataReader>());
         }
     }
 }

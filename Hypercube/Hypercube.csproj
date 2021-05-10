@@ -138,6 +138,7 @@
     <Compile Include="Forms\BrowserForm.Designer.cs">
       <DependentUpon>BrowserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <None Include="Control\AdomdDimTree.cs">
       <SubType>Component</SubType>
     </None>
