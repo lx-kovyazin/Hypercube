@@ -10,7 +10,7 @@ namespace Hypercube.Client.Method.FullnessMap
     {
         public static Cell Calculate(CellInfo info, params Model.Cell[] measurelist)
         {
-            var factor = new FullnessFactor(FullnessFactor.Calculate(measurelist));
+            var factor = FullnessFactor.Calculate(measurelist);
 
             return new Cell(info, factor);
         }

@@ -4,56 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Hypercube.Client.Model;
+using Hypercube.Client.Data.Extractor;
+
 using Hypercube.Client.Method.FullnessMap;
 using Microsoft.AnalysisServices.AdomdClient;
+
+using Hypercube.Client.Data;
 
 namespace Hypercube.Client.Method.FullnessMap
 {
     public class Map
     {
-        public Map()
+        public List<Cell> Cells
         {
-        
+            get;
+            private set;
         }
 
-        public void LoadData(CellSet set)
+        private Map(List<Cell> cells)
         {
-            var numDimentions = set.OlapInfo.AxesInfo.Axes[1].Hierarchies.Count;
-            var numMeasures   = set.Axes[0].Set.Tuples.Count;
+            Cells = cells;
+        }
 
-            var numRows = set.Axes[1].Set.Tuples.Count;
+        static public Map Create(CellSetData data)
+        {
+            var cellList = new List<Cell>();
 
-            var keyName = "none";
-            var data = "none";
+            var numCells = data.Dimensions.MembersList.Count;
 
-            var temp = set.OlapInfo.AxesInfo.Axes[1].Hierarchies;
-
-            for (int row = 0; row < numRows; row += numMeasures)
+            for (var i = 0; i < numCells; ++i)
             {
-                CellInfo info = new CellInfo();
+                var cellInfo = new CellInfo();
 
-                for (int dim = 0; dim < numDimentions; ++dim)
+                for (var n = 0; n < data.Dimensions.Levels.Length; ++n)
                 {
-                    keyName = temp[dim].Name.Split('.')[1].Trim('[', ']');
-                    data = set.Axes[1].Positions[row].Members[dim].Caption;
-
-                    info.Info.Dimentions.Add(keyName, data);
+                    cellInfo.Info.Add(data.Dimensions.Levels.ElementAt(n),
+                                      data.Dimensions.MembersList.ElementAt(i).ElementAt(n));
                 }
 
-                for (int n = 0; n < numMeasures; ++n)
-                {
-                    keyName = set.Axes[0].Positions[n].Members[0].Caption;
-                    data = set.Cells[row + n].FormattedValue;
+                var measureList = data.Measures.CellsList.ElementAt(0);
 
-                    info.Info.Measures.Add(keyName, data);
-                }
-
-                Cell cell = CellCalculator.Calculate(info);
+                cellList.Add(CellCalculator.Calculate(cellInfo, measureList));
             }
 
-            //string test1 = set.OlapInfo.AxesInfo.Axes[1].Hierarchies[0].Name;
-            //string test2 = set.OlapInfo.AxesInfo.Axes[1].Hierarchies[1].Name;
-            //string test3 = set.OlapInfo.AxesInfo.Axes[1].Hierarchies[2].Name;
+            return new Map(cellList);
         }
     }
 }

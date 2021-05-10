@@ -6,7 +6,7 @@ using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Hypercube.Client.Method.FullnessMap
 {
-    public class Info : Dictionary<string, string>
+    public class Info : Dictionary<Model.HierarchyLevel, Model.Member>
     {}
 
     public class CellInfo
