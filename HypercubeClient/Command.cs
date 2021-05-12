@@ -27,6 +27,7 @@ namespace Hypercube.Client
             return new AdomdCommand(commandProvider.Command, client.Connection);
         }
 
+        [Serializable]
         public enum ExecMethod
         {
             CellSet,

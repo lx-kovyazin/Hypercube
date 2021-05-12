@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Hypercube.Client.Extensions;
 using SourceGrid3;
 using SourceGrid3.Cells.Real;
 using SourceGrid3Cell = SourceGrid3.Cells.Real.Cell;
 using Hypercube.Client.Data;
-using Hypercube.Client.Data.Extractor;
-using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Hypercube.Control
 {

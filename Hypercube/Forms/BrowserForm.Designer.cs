@@ -36,18 +36,17 @@
             this.constructorTabPage = new System.Windows.Forms.TabPage();
             this.queryConstructor = new Hypercube.Control.QueryConstructor();
             this.dataSetPage = new System.Windows.Forms.TabPage();
+            this.cubeView = new Hypercube.Control.CubeView();
             this.methodsPage = new System.Windows.Forms.TabPage();
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.settingsComponent = new Hypercube.Control.SettingsComponent();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
             this.aboutComponent = new Hypercube.Control.AboutComponent();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.cubeView = new Hypercube.Control.CubeView();
             this.mainTabControl.SuspendLayout();
             this.connectionPage.SuspendLayout();
             this.constructorTabPage.SuspendLayout();
             this.dataSetPage.SuspendLayout();
-            this.methodsPage.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.aboutTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +122,23 @@
             this.dataSetPage.Text = "Данные";
             this.dataSetPage.UseVisualStyleBackColor = true;
             // 
+            // cubeView
+            // 
+            this.cubeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cubeView.FixedRows = 1;
+            this.cubeView.GridToolTipActive = true;
+            this.cubeView.Location = new System.Drawing.Point(3, 3);
+            this.cubeView.Name = "cubeView";
+            this.cubeView.Size = new System.Drawing.Size(847, 533);
+            this.cubeView.SpecialKeys = ((SourceGrid3.GridSpecialKeys)(((((((SourceGrid3.GridSpecialKeys.Arrows | SourceGrid3.GridSpecialKeys.Tab) 
+            | SourceGrid3.GridSpecialKeys.PageDownUp) 
+            | SourceGrid3.GridSpecialKeys.Enter) 
+            | SourceGrid3.GridSpecialKeys.Escape) 
+            | SourceGrid3.GridSpecialKeys.Control) 
+            | SourceGrid3.GridSpecialKeys.Shift)));
+            this.cubeView.StyleGrid = null;
+            this.cubeView.TabIndex = 0;
+            // 
             // methodsPage
             // 
             this.methodsPage.Location = new System.Drawing.Point(4, 31);
@@ -183,14 +199,6 @@
             this.imageList.Images.SetKeyName(3, "AboutIcon.png");
             this.imageList.Images.SetKeyName(4, "DataSetIcon.png");
             // 
-            // cubeView1
-            // 
-            this.cubeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cubeView.Location = new System.Drawing.Point(3, 3);
-            this.cubeView.Name = "cubeView";
-            this.cubeView.Size = new System.Drawing.Size(847, 533);
-            this.cubeView.TabIndex = 0;
-            // 
             // BrowserForm
             // 
             this.ClientSize = new System.Drawing.Size(867, 580);
@@ -205,7 +213,6 @@
             this.connectionPage.ResumeLayout(false);
             this.constructorTabPage.ResumeLayout(false);
             this.dataSetPage.ResumeLayout(false);
-            this.methodsPage.ResumeLayout(false);
             this.settingsTabPage.ResumeLayout(false);
             this.aboutTabPage.ResumeLayout(false);
             this.ResumeLayout(false);

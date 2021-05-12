@@ -1,4 +1,5 @@
-﻿using Hypercube.Client.Model;
+﻿using Hypercube.Client.Extensions;
+using Hypercube.Client.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -32,7 +33,6 @@ namespace Hypercube.Control
             get { return fixedListHeader.Text; }
             set { fixedListHeader.Text = value; }
         }
-
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -144,5 +144,26 @@ namespace Hypercube.Control
 
         private void FixedListView_Resize(object sender, EventArgs e)
             => ResizeHeader();
+
+        private void Rotate(bool isLeft)
+        {
+            var items = fixedListView.Items;
+            if (items.Count == 0)
+                return;
+
+            var castedItems = items.Cast<FixedMetaListViewItem>();
+            var newItems = isLeft
+                         ? castedItems.RotateLeft().ToArray()
+                         : castedItems.RotateRight().ToArray();
+
+            items.Clear();
+            items.AddRange(newItems);
+        }
+
+        private void RotateLeftButton_Click(object sender, EventArgs e)
+            => Rotate(true);
+
+        private void RotateRightButton_Click(object sender, EventArgs e)
+            => Rotate(false);
     }
 }
