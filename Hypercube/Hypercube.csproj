@@ -112,6 +112,15 @@
     <Compile Include="Control\Filter\FilterListViewSubItem.cs" />
     <Compile Include="Control\Filter\FilterListViewValueSubItem.cs" />
     <Compile Include="Control\Filter\IFilterListViewSubItem.cs" />
+    <Compile Include="Control\FullnessMap\FullnessMapComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FullnessMap\MapUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FullnessMap\FullnessMapComponent.Designer.cs">
+      <DependentUpon>FullnessMapComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\FixedMetaListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Filter\FilterListView.resx">
       <DependentUpon>FilterListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\FullnessMap\FullnessMapComponent.resx">
+      <DependentUpon>FullnessMapComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FixedMetaListView.resx">
       <DependentUpon>FixedMetaListView.cs</DependentUpon>

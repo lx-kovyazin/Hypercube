@@ -62,6 +62,11 @@
     <Compile Include="MetaInfo.cs" />
     <Compile Include="ICommandProvider.cs" />
     <Compile Include="MdxCommandProvider.cs" />
+    <Compile Include="Method\FullnessMap\Cell.cs" />
+    <Compile Include="Method\FullnessMap\CellCalculator.cs" />
+    <Compile Include="Method\FullnessMap\CellInfo.cs" />
+    <Compile Include="Method\FullnessMap\FullnessFactor.cs" />
+    <Compile Include="Method\FullnessMap\Map.cs" />
     <Compile Include="Model\Hierarchy.cs" />
     <Compile Include="Model\HierarchyLevel.cs" />
     <Compile Include="Model\IMetaModel.cs" />
