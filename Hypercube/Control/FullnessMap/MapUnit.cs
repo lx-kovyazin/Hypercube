@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Hypercube.Client.Method.FullnessMap;
 
-namespace Hypercube.Client.Methods
+namespace Hypercube.Control.FullnessMap
 {
     public class MapUnit :UserControl
     {
@@ -22,7 +22,7 @@ namespace Hypercube.Client.Methods
             {
                 Cell = cell,
 
-                Size = new Size(10, 10),
+                Size = new Size(15, 15),
                 BackColor = Color.FromArgb((int)alpha, unitColor)
             };
 

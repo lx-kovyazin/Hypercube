@@ -27,7 +27,7 @@ namespace Hypercube.Client.Method.FullnessMap
             Cells = cells;
         }
 
-        static public Map Create(CellSetData data)
+        static public Map Create(ExtractedData data)
         {
             var cellList = new List<Cell>();
 
@@ -39,11 +39,11 @@ namespace Hypercube.Client.Method.FullnessMap
 
                 for (var n = 0; n < data.Dimensions.Levels.Length; ++n)
                 {
-                    cellInfo.Info.Add(data.Dimensions.Levels.ElementAt(n),
+                    cellInfo.Data.Add(data.Dimensions.Levels.ElementAt(n),
                                       data.Dimensions.MembersList.ElementAt(i).ElementAt(n));
                 }
 
-                var measureList = data.Measures.CellsList.ElementAt(0);
+                var measureList = data.Measures.CellsList.ElementAt(i);
 
                 cellList.Add(CellCalculator.Calculate(cellInfo, measureList));
             }

@@ -11,14 +11,14 @@ namespace Hypercube.Client.Method.FullnessMap
 
     public class CellInfo
     {
-        public Info Info
+        public Info Data
         {
             get; set;
         }
 
         public CellInfo()
         {
-            Info = new Info();
+            Data = new Info();
         }
     }
 }

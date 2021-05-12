@@ -27,7 +27,8 @@ namespace Hypercube.Client.Method.FullnessMap
 
                 foreach (var value in list)
                 {
-                    if (!string.IsNullOrEmpty(value.FriendlyName))
+                    if (!string.IsNullOrEmpty(value.FriendlyName) 
+                        && !value.FriendlyName.Equals("(null)"))
                     {
                         ++count;
                     }
