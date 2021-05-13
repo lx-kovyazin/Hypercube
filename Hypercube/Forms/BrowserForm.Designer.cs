@@ -43,10 +43,12 @@
             this.aboutTabPage = new System.Windows.Forms.TabPage();
             this.aboutComponent = new Hypercube.Control.AboutComponent();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.fullnessMapComponent = new Hypercube.Control.FullnessMap.FullnessMapComponent();
             this.mainTabControl.SuspendLayout();
             this.connectionPage.SuspendLayout();
             this.constructorTabPage.SuspendLayout();
             this.dataSetPage.SuspendLayout();
+            this.methodsPage.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.aboutTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +143,8 @@
             // 
             // methodsPage
             // 
+            this.methodsPage.Controls.Add(this.fullnessMapComponent);
+            this.methodsPage.ImageKey = "MethodIcon.png";
             this.methodsPage.Location = new System.Drawing.Point(4, 31);
             this.methodsPage.Name = "methodsPage";
             this.methodsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -198,6 +202,15 @@
             this.imageList.Images.SetKeyName(2, "SettingsIcon.png");
             this.imageList.Images.SetKeyName(3, "AboutIcon.png");
             this.imageList.Images.SetKeyName(4, "DataSetIcon.png");
+            this.imageList.Images.SetKeyName(5, "MethodIcon.png");
+            // 
+            // fullnessMapComponent
+            // 
+            this.fullnessMapComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fullnessMapComponent.Location = new System.Drawing.Point(3, 3);
+            this.fullnessMapComponent.Name = "fullnessMapComponent";
+            this.fullnessMapComponent.Size = new System.Drawing.Size(847, 533);
+            this.fullnessMapComponent.TabIndex = 0;
             // 
             // BrowserForm
             // 
@@ -213,6 +226,7 @@
             this.connectionPage.ResumeLayout(false);
             this.constructorTabPage.ResumeLayout(false);
             this.dataSetPage.ResumeLayout(false);
+            this.methodsPage.ResumeLayout(false);
             this.settingsTabPage.ResumeLayout(false);
             this.aboutTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -234,5 +248,6 @@
         private System.Windows.Forms.TabPage dataSetPage;
         private System.Windows.Forms.TabPage methodsPage;
         private Control.CubeView cubeView;
+        private Control.FullnessMap.FullnessMapComponent fullnessMapComponent;
     }
 }

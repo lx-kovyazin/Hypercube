@@ -19,6 +19,7 @@ namespace Hypercube.Forms
             InitializeMaterialSkinManager();
 
             queryConstructor.DataCollected += cubeView.LoadData;
+            queryConstructor.DataCollected += fullnessMapComponent.LoadData;
         }
 
         private void InitializeMaterialSkinManager()

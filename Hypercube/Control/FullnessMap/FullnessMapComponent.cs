@@ -1,87 +1,60 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Map = Hypercube.Client.Method.FullnessMap.Map;
-using CellSetData = Hypercube.Client.Data.CellSetData;
 using ExtractedData = Hypercube.Client.Data.ExtractedData;
+using Map = Hypercube.Client.Method.FullnessMap.Map;
 
 namespace Hypercube.Control.FullnessMap
 {
-    public partial class FullnessMapComponent : UserControl
+    public partial class FullnessMapComponent
+        : UserControl
     {
-        public FullnessMapComponent()
-        {
-            InitializeComponent();
-        }
+        private Map map;
+        private ExtractedData extractedData;
 
-        public ExtractedData Data
-        {
-            get;
-            private set;
-        }
+        public FullnessMapComponent() => InitializeComponent();
 
-        private Map Map
+        private void Clear()
         {
-            get;
-            set;
+            viewPanel.Controls.Clear();
+            textBoxData.Clear();
         }
 
         public void LoadData(ExtractedData data)
         {
-            viewPanel.Controls.Clear();
-            textBoxData.Clear();
-
-            Data = data;
-            Map = Map.Create(Data);
+            Clear();
+            extractedData = data;
         }
 
         private void Unit_MouseClick(object sender, MouseEventArgs e)
         {
-            MapUnit unit = (MapUnit)sender;
-
-            string hierarchy = "Иерархия :\r\n";
-            string factor = $"Заполненность = { unit.Cell.Factor.Value }%\r\n";
-
-            foreach (var data in unit.Cell.Info.Data)
-            {
-                hierarchy += $"{ data.Key.FriendlyName } : { data.Value.FriendlyName }\r\n";
-            }
-
-            textBoxData.AppendText(hierarchy + factor);
+            const string separator = "—————";
+            textBoxData.AppendText(sender.ToString());
+            textBoxData.AppendText(separator + Environment.NewLine);
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
+        private void BuildButton_Click(object sender, EventArgs e)
         {
-            viewPanel.Controls.Clear();
-            textBoxData.Clear();
+            Clear();
+            map = Map.Create(extractedData);
 
-            MapUnit prevUnit = null;
+            // Add Range impl.
+            //var units = new MapUnit[map.Cells.Count];
+            //for (int ui = 0; ui < map.Cells.Count; ui++)
+            //{
+            //    var unit = MapUnit.Create(map.Cells[ui]);
+            //    unit.MouseClick += Unit_MouseClick;
+            //    units[ui] = unit;
+            //}
+            //viewPanel.Controls.AddRange(units);
 
-            foreach (var cell in Map.Cells)
+            // Add impl.
+            foreach (var cell in map.Cells)
             {
-                MapUnit unit = MapUnit.Create(cell);
+                var unit = MapUnit.Create(cell);
                 unit.MouseClick += Unit_MouseClick;
-
-                if (prevUnit != null)
-                {
-                    var newPoint = new Point(prevUnit.Location.X, prevUnit.Location.X);
-                    newPoint.Offset(prevUnit.Size.Width, 0);
-                    unit.Location = newPoint;
-                }
-
-                prevUnit = unit;
-
                 viewPanel.Controls.Add(unit);
-
-                prevUnit = unit;
             }
+
         }
     }
 }

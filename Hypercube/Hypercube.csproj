@@ -236,6 +236,9 @@
     <EmbeddedResource Include="Control\FixedMetaListView.resx">
       <DependentUpon>FixedMetaListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\FullnessMap\MapUnit.resx">
+      <DependentUpon>MapUnit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\QueryConstructor.resx">
       <DependentUpon>QueryConstructor.cs</DependentUpon>
     </EmbeddedResource>
