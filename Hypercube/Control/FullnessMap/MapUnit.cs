@@ -1,4 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Hypercube.Client.Method.FullnessMap;
@@ -6,38 +10,74 @@ using Hypercube.Client.Method.FullnessMap;
 namespace Hypercube.Control.FullnessMap
 {
     internal class MapUnit
-        : UserControl
+        : UserControl, ICloneable
     {
-        private readonly Cell cell;
+        private const int MAX_PERCENT = 100;
+
+        private readonly int percent;
+        private readonly Image image;
+        private Cell cell;
 
         private MapUnit() => InitializeComponent();
 
-        public MapUnit(Cell cell)
+        private MapUnit(int percent)
             : this()
         {
-            this.cell = cell;
-            var alpha = cell.Factor.Value * byte.MaxValue / 100F;
-            BackColor = Color.FromArgb((int)alpha, BackColor);
+            this.percent = percent;
+            var alpha = percent * byte.MaxValue / MAX_PERCENT;
+            BackColor = Color.FromArgb(alpha, BackColor);
+            image = GenerateBitmap();
         }
 
-        public MapUnit(Cell cell, Color color)
+        private MapUnit(Cell cell, Color color)
             : this()
         {
             this.cell = cell;
             BackColor = color;
         }
 
-        public Image ToImage()
+        private Bitmap GenerateBitmap()
         {
             var b = new Bitmap(Width, Height);
-            DrawToBitmap(b, Bounds);
+            try
+            {
+                DrawToBitmap(b, Bounds);
+            }
+            catch (Win32Exception ex)
+            {
+                Debug.Print(ex.ToString());
+            }
             return b;
+        }
+
+        public Image ToImage() => image;
+
+        private static bool prototypesInitialized;
+        private static List<MapUnit> unitPrototypes;
+
+        private static void InitializePrototypes()
+        {
+            unitPrototypes = new List<MapUnit>(MAX_PERCENT + 1);
+            for (int percent = 0; percent < unitPrototypes.Capacity; percent++)
+                unitPrototypes.Add(new MapUnit(percent));
+            prototypesInitialized = true;
+        }
+
+        public static MapUnit Create(Cell cell)
+        {
+            if (!prototypesInitialized)
+                InitializePrototypes();
+
+            var unit = unitPrototypes.Find(u => u.percent == cell.Factor.Value)
+                                     .Clone() as MapUnit;
+            unit.cell = cell;
+            return unit;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            var pen = new Pen(Color.FromArgb(65, 85, 94), 1);
+            var pen = new Pen(Color.FromArgb(65, 85, 94));
             var rect = Bounds;
             rect.Width--;
             rect.Height--;
@@ -70,5 +110,7 @@ namespace Hypercube.Control.FullnessMap
             ResumeLayout(false);
 
         }
+
+        public object Clone() => MemberwiseClone();
     }
 }

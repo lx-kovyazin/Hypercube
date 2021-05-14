@@ -48,7 +48,7 @@ namespace Hypercube.Control.FullnessMap
             var mapModel = new ListModel<MapUnit>();
             foreach (var cell in map.Cells)
             {
-                var unit = new MapUnit(cell);
+                var unit = MapUnit.Create(cell);
                 mapModel.Add(unit);
             }
             viewPanel.Model = mapModel;
