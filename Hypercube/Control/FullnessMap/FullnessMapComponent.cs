@@ -17,7 +17,7 @@ namespace Hypercube.Control.FullnessMap
             InitializeComponent();
             viewPanel.ItemAppearance += (s, e) => {
                 e.DisplayedText = null;
-                e.DisplayedImage = (e.Item as MapUnit).ToImage();
+                e.DisplayedImage = (e.Item as MapUnit).Image;
             };
             viewPanel.ItemClicked += (s, e) => {
                 const string separator = "—————";
@@ -45,6 +45,12 @@ namespace Hypercube.Control.FullnessMap
                 return;
 
             map = Map.Create(extractedData);
+            MapUnit.InitializePrototypes(null);
+            //MapUnit.InitializePrototypes(new Dictionary<int, Color>
+            //{
+            //    [0] = Color.Red,
+            //    [100] = Color.Green,
+            //});
             var mapModel = new ListModel<MapUnit>();
             foreach (var cell in map.Cells)
             {

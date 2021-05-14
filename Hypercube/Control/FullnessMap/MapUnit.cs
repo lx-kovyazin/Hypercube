@@ -14,27 +14,34 @@ namespace Hypercube.Control.FullnessMap
     {
         private const int MAX_PERCENT = 100;
 
+        private static readonly Color defaultColor = Color.FromArgb(84, 110, 122);
+        private static bool prototypesInitialized;
+        private static List<MapUnit> unitPrototypes;
+
         private readonly int percent;
         private readonly Image image;
         private Cell cell;
 
         private MapUnit() => InitializeComponent();
 
-        private MapUnit(int percent)
+        private MapUnit(int percent, Color color)
             : this()
         {
             this.percent = percent;
-            var alpha = percent * byte.MaxValue / MAX_PERCENT;
-            BackColor = Color.FromArgb(alpha, BackColor);
+            BackColor = color;
             image = GenerateBitmap();
         }
 
-        private MapUnit(Cell cell, Color color)
-            : this()
-        {
-            this.cell = cell;
-            BackColor = color;
-        }
+        private MapUnit(int percent)
+            : this(
+                  percent,
+                  Color.FromArgb(
+                      percent * byte.MaxValue / MAX_PERCENT,
+                      defaultColor
+            ))
+        { }
+
+        public Image Image => image;
 
         private Bitmap GenerateBitmap()
         {
@@ -50,29 +57,50 @@ namespace Hypercube.Control.FullnessMap
             return b;
         }
 
-        public Image ToImage() => image;
-
-        private static bool prototypesInitialized;
-        private static List<MapUnit> unitPrototypes;
-
-        private static void InitializePrototypes()
+        public static void InitializePrototypes(
+            Dictionary<int, Color> additionalPrototypes
+            )
         {
-            unitPrototypes = new List<MapUnit>(MAX_PERCENT + 1);
-            for (int percent = 0; percent < unitPrototypes.Capacity; percent++)
+            const int MAX_PERCENT_COUNT = MAX_PERCENT + 1;
+            if (additionalPrototypes?.Count > MAX_PERCENT_COUNT)
+                throw new ArgumentException(
+                    $"The count of items must be less than {MAX_PERCENT_COUNT}.",
+                    nameof(additionalPrototypes)
+                );
+
+            var hasItems = additionalPrototypes != null
+                        && additionalPrototypes.Count > 0
+                         ;
+            unitPrototypes = new List<MapUnit>();
+            for (int percent = 0; percent < MAX_PERCENT_COUNT; percent++)
+            {
+                if ( hasItems
+                  && additionalPrototypes.TryGetValue(percent, out var color)
+                   )
+                {
+                    unitPrototypes.Add(new MapUnit(percent, color));
+                    continue;
+                }
                 unitPrototypes.Add(new MapUnit(percent));
+            }
             prototypesInitialized = true;
         }
 
         public static MapUnit Create(Cell cell)
         {
             if (!prototypesInitialized)
-                InitializePrototypes();
+                throw new Exception(
+                      $"The static method \"{nameof(InitializePrototypes)}\""
+                    + "must be called before calling this method."
+                );
 
             var unit = unitPrototypes.Find(u => u.percent == cell.Factor.Value)
                                      .Clone() as MapUnit;
             unit.cell = cell;
             return unit;
         }
+
+        public object Clone() => MemberwiseClone();
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -103,14 +131,12 @@ namespace Hypercube.Control.FullnessMap
             // 
             // MapUnit
             // 
-            BackColor = Color.FromArgb(84, 110, 122);
+            BackColor = defaultColor;
             Margin = new Padding(0);
             Name = "MapUnit";
             Size = new Size(10, 10);
             ResumeLayout(false);
 
         }
-
-        public object Clone() => MemberwiseClone();
     }
 }
