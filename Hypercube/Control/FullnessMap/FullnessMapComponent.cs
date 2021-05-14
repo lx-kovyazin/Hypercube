@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using AdamsLair.WinForms.ItemModels;
 using ExtractedData = Hypercube.Client.Data.ExtractedData;
 using Map = Hypercube.Client.Method.FullnessMap.Map;
 
@@ -11,7 +12,19 @@ namespace Hypercube.Control.FullnessMap
         private Map map;
         private ExtractedData extractedData;
 
-        public FullnessMapComponent() => InitializeComponent();
+        public FullnessMapComponent()
+        {
+            InitializeComponent();
+            viewPanel.ItemAppearance += (s, e) => {
+                e.DisplayedText = null;
+                e.DisplayedImage = (e.Item as MapUnit).ToImage();
+            };
+            viewPanel.ItemClicked += (s, e) => {
+                const string separator = "—————";
+                textBoxData.AppendText(e.Item.ToString());
+                textBoxData.AppendText(separator + Environment.NewLine);
+            };
+        }
 
         private void Clear()
         {
@@ -25,36 +38,20 @@ namespace Hypercube.Control.FullnessMap
             extractedData = data;
         }
 
-        private void Unit_MouseClick(object sender, MouseEventArgs e)
-        {
-            const string separator = "—————";
-            textBoxData.AppendText(sender.ToString());
-            textBoxData.AppendText(separator + Environment.NewLine);
-        }
-
         private void BuildButton_Click(object sender, EventArgs e)
         {
             Clear();
+            if (extractedData is null)
+                return;
+
             map = Map.Create(extractedData);
-
-            // Add Range impl.
-            //var units = new MapUnit[map.Cells.Count];
-            //for (int ui = 0; ui < map.Cells.Count; ui++)
-            //{
-            //    var unit = MapUnit.Create(map.Cells[ui]);
-            //    unit.MouseClick += Unit_MouseClick;
-            //    units[ui] = unit;
-            //}
-            //viewPanel.Controls.AddRange(units);
-
-            // Add impl.
+            var mapModel = new ListModel<MapUnit>();
             foreach (var cell in map.Cells)
             {
-                var unit = MapUnit.Create(cell);
-                unit.MouseClick += Unit_MouseClick;
-                viewPanel.Controls.Add(unit);
+                var unit = new MapUnit(cell);
+                mapModel.Add(unit);
             }
-
+            viewPanel.Model = mapModel;
         }
     }
 }

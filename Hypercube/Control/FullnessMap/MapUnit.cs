@@ -1,18 +1,18 @@
-﻿using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using Hypercube.Client.Method.FullnessMap;
 
 namespace Hypercube.Control.FullnessMap
 {
-    public class MapUnit
+    internal class MapUnit
         : UserControl
     {
         private readonly Cell cell;
 
         private MapUnit() => InitializeComponent();
 
-        private MapUnit(Cell cell)
+        public MapUnit(Cell cell)
             : this()
         {
             this.cell = cell;
@@ -20,7 +20,29 @@ namespace Hypercube.Control.FullnessMap
             BackColor = Color.FromArgb((int)alpha, BackColor);
         }
 
-        public static MapUnit Create(Cell cell) => new MapUnit(cell);
+        public MapUnit(Cell cell, Color color)
+            : this()
+        {
+            this.cell = cell;
+            BackColor = color;
+        }
+
+        public Image ToImage()
+        {
+            var b = new Bitmap(Width, Height);
+            DrawToBitmap(b, Bounds);
+            return b;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            var pen = new Pen(Color.FromArgb(65, 85, 94), 1);
+            var rect = Bounds;
+            rect.Width--;
+            rect.Height--;
+            e.Graphics.DrawRectangle(pen, rect);
+        }
 
         public override string ToString()
         {
@@ -30,6 +52,7 @@ namespace Hypercube.Control.FullnessMap
                 builder.AppendLine(
                     $"\t{data.Key.FriendlyName} — {data.Value.FriendlyName}"
                 );
+
             builder.AppendLine($"Заполненность — {cell.Factor.Value}%");
             return builder.ToString();
         }
@@ -37,13 +60,13 @@ namespace Hypercube.Control.FullnessMap
         private void InitializeComponent()
         {
             SuspendLayout();
-            //
+            // 
             // MapUnit
-            //
-            Name = "mapUnit";
+            // 
+            BackColor = Color.FromArgb(84, 110, 122);
+            Margin = new Padding(0);
+            Name = "MapUnit";
             Size = new Size(10, 10);
-            BackColor = Color.FromArgb(0x54, 0x6E, 0x7A);
-            BorderStyle = BorderStyle.FixedSingle;
             ResumeLayout(false);
 
         }
