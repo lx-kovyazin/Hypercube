@@ -6,6 +6,25 @@ using MaterialSkin.Controls;
 
 namespace Hypercube.Control.FullnessMap
 {
+    internal static class PercentAddedValidator
+    {
+        public static bool IsAlreadyAdded(this HashSet<MapUnit.Prototype> set, int percent)
+        {
+            bool result = false;
+
+            foreach (var item in set)
+            {
+                if (item.Percent == percent)
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
+    }
+
     public partial class MapUnitLevelSet
         : MaterialListView
     {
@@ -21,9 +40,15 @@ namespace Hypercube.Control.FullnessMap
 
         public bool Add(int percent, Color color)
         {
-            var result = set.Add(new MapUnit.Prototype(percent, color));
-            if (result)
-                Items.Add($"{percent}%");
+            var result = set.IsAlreadyAdded(percent);
+
+            if (!result)
+            {
+                result = set.Add(new MapUnit.Prototype(percent, color));
+                if (result)
+                    Items.Add($"{percent}%");
+            }
+
             return result;
         }
 
