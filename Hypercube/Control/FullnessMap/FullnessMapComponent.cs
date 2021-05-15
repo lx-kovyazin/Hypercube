@@ -45,12 +45,9 @@ namespace Hypercube.Control.FullnessMap
                 return;
 
             map = Map.Create(extractedData);
-            MapUnit.InitializePrototypes(null);
-            //MapUnit.InitializePrototypes(new Dictionary<int, Color>
-            //{
-            //    [0] = Color.Red,
-            //    [100] = Color.Green,
-            //});
+            MapUnit.InitializePrototypes(
+                mapUnitLevelSetComponent.mapUnitLevelSet.Set
+            );
             var mapModel = new ListModel<MapUnit>();
             foreach (var cell in map.Cells)
             {

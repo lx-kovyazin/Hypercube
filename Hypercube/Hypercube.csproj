@@ -115,9 +115,7 @@
     <Compile Include="Control\FullnessMap\FullnessMapComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FullnessMap\MapUnit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Control\FullnessMap\MapUnit.cs" />
     <Compile Include="Control\FullnessMap\FullnessMapComponent.Designer.cs">
       <DependentUpon>FullnessMapComponent.cs</DependentUpon>
     </Compile>
@@ -128,6 +126,18 @@
       <DependentUpon>FixedMetaListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\FixedMetaListViewItem.cs" />
+    <Compile Include="Control\FullnessMap\MapUnitLevelSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\FullnessMap\MapUnitLevelSet.Designer.cs">
+      <DependentUpon>MapUnitLevelSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FullnessMap\MapUnitLevelSetComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FullnessMap\MapUnitLevelSetComponent.Designer.cs">
+      <DependentUpon>MapUnitLevelSetComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\MDXLexer.cs" />
     <Compile Include="Control\QueryConstructor.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FullnessMap\MapUnit.resx">
       <DependentUpon>MapUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\FullnessMap\MapUnitLevelSetComponent.resx">
+      <DependentUpon>MapUnitLevelSetComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\QueryConstructor.resx">
       <DependentUpon>QueryConstructor.cs</DependentUpon>
