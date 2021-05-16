@@ -1,7 +1,7 @@
 ﻿
 namespace Hypercube.Control
 {
-    partial class QueryConstructor
+    partial class QueryConstructorPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -168,12 +168,10 @@ namespace Hypercube.Control
             this.executeButton.UseAccentColor = false;
             this.executeButton.UseVisualStyleBackColor = true;
             // 
-            // QueryConstructor
+            // QueryConstructorPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "QueryConstructor";
+            this.Name = "QueryConstructorPage";
             this.Size = new System.Drawing.Size(640, 480);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

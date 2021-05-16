@@ -1,22 +1,15 @@
-﻿using Hypercube.Client;
-using Hypercube.Client.Extensions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Hypercube.Client;
+using Hypercube.Client.Extensions;
 using HypercubeClient = Hypercube.Client.Client;
 
 namespace Hypercube.Control
 {
-    public partial class ConnectionComponent
-        : UserControl
+    public partial class ConnectionPage
+        : TabPage
     {
-        public ConnectionComponent()
+        public ConnectionPage()
         {
             InitializeComponent();
         }

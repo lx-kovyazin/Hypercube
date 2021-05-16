@@ -1,7 +1,7 @@
 ﻿
 namespace Hypercube.Control
 {
-    partial class SettingsComponent
+    partial class SettingsPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -60,13 +60,11 @@ namespace Hypercube.Control
             this.executionMethodLabel.TabIndex = 1;
             this.executionMethodLabel.Text = "Выбор способа выполнения запроса:";
             // 
-            // SettingsComponent
+            // SettingsPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.executionMethodLabel);
             this.Controls.Add(this.executionMethodSwitch);
-            this.Name = "SettingsComponent";
+            this.Name = "SettingsPage";
             this.Size = new System.Drawing.Size(616, 444);
             this.ResumeLayout(false);
             this.PerformLayout();

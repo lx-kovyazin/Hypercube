@@ -56,100 +56,106 @@
     <ApplicationIcon>Hypercube.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Control\AboutComponent.cs">
+    <Compile Include="Control\AboutPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\AboutPage.Designer.cs">
+      <DependentUpon>AboutPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\QueryConstructor\CommandComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\AboutComponent.Designer.cs">
-      <DependentUpon>AboutComponent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\CommandComponent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\CommandComponent.Designer.cs">
+    <Compile Include="Control\QueryConstructor\CommandComponent.Designer.cs">
       <DependentUpon>CommandComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\ConnectionComponent.cs">
+    <Compile Include="Control\ConnectionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\ConnectionPage.Designer.cs">
+      <DependentUpon>ConnectionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\QueryConstructor\ConstructorComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\ConnectionComponent.Designer.cs">
-      <DependentUpon>ConnectionComponent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\ConstructorComponent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ConstructorComponent.Designer.cs">
+    <Compile Include="Control\QueryConstructor\ConstructorComponent.Designer.cs">
       <DependentUpon>ConstructorComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\ControlExtensions.cs" />
-    <Compile Include="Control\CubeTreeComponent.cs">
+    <Compile Include="Control\QueryConstructor\CubeTreeComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\CubeTreeComponent.Designer.cs">
+    <Compile Include="Control\QueryConstructor\CubeTreeComponent.Designer.cs">
       <DependentUpon>CubeTreeComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\CubeTreeNode.cs" />
+    <Compile Include="Control\QueryConstructor\CubeTreeNode.cs" />
     <Compile Include="Control\CubeView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Control\CubeView.Designer.cs">
       <DependentUpon>CubeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Filter\FilterComponent.cs">
+    <Compile Include="Control\QueryConstructor\Filter\FilterComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\Filter\FilterComponent.Designer.cs">
+    <Compile Include="Control\QueryConstructor\Filter\FilterComponent.Designer.cs">
       <DependentUpon>FilterComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Filter\FilterListView.cs">
+    <Compile Include="Control\QueryConstructor\Filter\FilterListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\Filter\FilterListView.Designer.cs">
+    <Compile Include="Control\QueryConstructor\Filter\FilterListView.Designer.cs">
       <DependentUpon>FilterListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Filter\FilterListViewHierarchySubItem.cs" />
-    <Compile Include="Control\Filter\FilterListViewItem.cs" />
-    <Compile Include="Control\Filter\FilterListViewOperatorSubItem.cs" />
-    <Compile Include="Control\Filter\FilterListViewSubItem.cs" />
-    <Compile Include="Control\Filter\FilterListViewValueSubItem.cs" />
-    <Compile Include="Control\Filter\IFilterListViewSubItem.cs" />
-    <Compile Include="Control\FullnessMap\FullnessMapComponent.cs">
+    <Compile Include="Control\QueryConstructor\Filter\FilterListViewHierarchySubItem.cs" />
+    <Compile Include="Control\QueryConstructor\Filter\FilterListViewItem.cs" />
+    <Compile Include="Control\QueryConstructor\Filter\FilterListViewOperatorSubItem.cs" />
+    <Compile Include="Control\QueryConstructor\Filter\FilterListViewSubItem.cs" />
+    <Compile Include="Control\QueryConstructor\Filter\FilterListViewValueSubItem.cs" />
+    <Compile Include="Control\QueryConstructor\Filter\IFilterListViewSubItem.cs" />
+    <Compile Include="Control\Methods\FullnessMap\FullnessMapComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FullnessMap\MapUnit.cs" />
-    <Compile Include="Control\FullnessMap\FullnessMapComponent.Designer.cs">
+    <Compile Include="Control\Methods\FullnessMap\MapUnit.cs" />
+    <Compile Include="Control\Methods\FullnessMap\FullnessMapComponent.Designer.cs">
       <DependentUpon>FullnessMapComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\FixedMetaListView.cs">
+    <Compile Include="Control\QueryConstructor\FixedMetaListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FixedMetaListView.Designer.cs">
+    <Compile Include="Control\QueryConstructor\FixedMetaListView.Designer.cs">
       <DependentUpon>FixedMetaListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\FixedMetaListViewItem.cs" />
-    <Compile Include="Control\FullnessMap\MapUnitLevelSet.cs">
+    <Compile Include="Control\QueryConstructor\FixedMetaListViewItem.cs" />
+    <Compile Include="Control\Methods\FullnessMap\MapUnitLevelSet.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\FullnessMap\MapUnitLevelSet.Designer.cs">
+    <Compile Include="Control\Methods\FullnessMap\MapUnitLevelSet.Designer.cs">
       <DependentUpon>MapUnitLevelSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\FullnessMap\MapUnitLevelSetComponent.cs">
+    <Compile Include="Control\Methods\FullnessMap\MapUnitLevelSetComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FullnessMap\MapUnitLevelSetComponent.Designer.cs">
+    <Compile Include="Control\Methods\FullnessMap\MapUnitLevelSetComponent.Designer.cs">
       <DependentUpon>MapUnitLevelSetComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\MDXLexer.cs" />
-    <Compile Include="Control\QueryConstructor.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Control\QueryConstructor\MDXLexer.cs" />
+    <Compile Include="Control\MethodsPage.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\QueryConstructor.Designer.cs">
-      <DependentUpon>QueryConstructor.cs</DependentUpon>
+    <Compile Include="Control\MethodsPage.Designer.cs">
+      <DependentUpon>MethodsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettingsComponent.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Control\QueryConstructorPage.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\SettingsComponent.Designer.cs">
-      <DependentUpon>SettingsComponent.cs</DependentUpon>
+    <Compile Include="Control\QueryConstructorPage.Designer.cs">
+      <DependentUpon>QueryConstructorPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SettingsPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\SettingsPage.Designer.cs">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BrowserForm.cs">
       <SubType>Form</SubType>
@@ -158,48 +164,6 @@
       <DependentUpon>BrowserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <None Include="Control\AdomdDimTree.cs">
-      <SubType>Component</SubType>
-    </None>
-    <None Include="Control\AdomdDimTree.Designer.cs">
-      <DependentUpon>AdomdDimTree.cs</DependentUpon>
-    </None>
-    <None Include="Control\AdomdFunctionsTree.cs">
-      <SubType>Component</SubType>
-    </None>
-    <None Include="Control\AdomdFunctionsTree.Designer.cs">
-      <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
-    </None>
-    <None Include="Control\AdomdProperties.cs">
-      <SubType>UserControl</SubType>
-    </None>
-    <None Include="Control\AdomdProperties.Designer.cs">
-      <DependentUpon>AdomdProperties.cs</DependentUpon>
-    </None>
-    <None Include="Forms\Command.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\Command.Designer.cs">
-      <DependentUpon>Command.cs</DependentUpon>
-    </None>
-    <None Include="Forms\BrowserOld.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\BrowserOld.Designer.cs">
-      <DependentUpon>BrowserOld.cs</DependentUpon>
-    </None>
-    <None Include="Forms\frmSchemaInfo.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\frmSchemaInfo.Designer.cs">
-      <DependentUpon>frmSchemaInfo.cs</DependentUpon>
-    </None>
-    <None Include="Forms\PropertiesDlg.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\PropertiesDlg.Designer.cs">
-      <DependentUpon>PropertiesDlg.cs</DependentUpon>
-    </None>
     <None Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </None>
@@ -219,75 +183,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <None Include="TableData.cs" />
-    <EmbeddedResource Include="Control\AboutComponent.resx">
-      <DependentUpon>AboutComponent.cs</DependentUpon>
+    <EmbeddedResource Include="Control\AboutPage.resx">
+      <DependentUpon>AboutPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\CommandComponent.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\CommandComponent.resx">
       <DependentUpon>CommandComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\ConnectionComponent.resx">
-      <DependentUpon>ConnectionComponent.cs</DependentUpon>
+    <EmbeddedResource Include="Control\ConnectionPage.resx">
+      <DependentUpon>ConnectionPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\ConstructorComponent.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\ConstructorComponent.resx">
       <DependentUpon>ConstructorComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\CubeTreeComponent.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\CubeTreeComponent.resx">
       <DependentUpon>CubeTreeComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Filter\FilterComponent.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\Filter\FilterComponent.resx">
       <DependentUpon>FilterComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Filter\FilterListView.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\Filter\FilterListView.resx">
       <DependentUpon>FilterListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\FullnessMap\FullnessMapComponent.resx">
+    <EmbeddedResource Include="Control\Methods\FullnessMap\FullnessMapComponent.resx">
       <DependentUpon>FullnessMapComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\FixedMetaListView.resx">
+    <EmbeddedResource Include="Control\QueryConstructor\FixedMetaListView.resx">
       <DependentUpon>FixedMetaListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\FullnessMap\MapUnit.resx">
+    <EmbeddedResource Include="Control\Methods\FullnessMap\MapUnit.resx">
       <DependentUpon>MapUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\FullnessMap\MapUnitLevelSetComponent.resx">
+    <EmbeddedResource Include="Control\Methods\FullnessMap\MapUnitLevelSetComponent.resx">
       <DependentUpon>MapUnitLevelSetComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\QueryConstructor.resx">
-      <DependentUpon>QueryConstructor.cs</DependentUpon>
+    <EmbeddedResource Include="Control\MethodsPage.resx">
+      <DependentUpon>MethodsPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettingsComponent.resx">
-      <DependentUpon>SettingsComponent.cs</DependentUpon>
+    <EmbeddedResource Include="Control\QueryConstructorPage.resx">
+      <DependentUpon>QueryConstructorPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SettingsPage.resx">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BrowserForm.resx">
       <DependentUpon>BrowserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\AdomdDimTree.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AdomdDimTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\AdomdFunctionsTree.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AdomdFunctionsTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\AdomdProperties.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AdomdProperties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Command.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Command.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BrowserOld.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>BrowserOld.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSchemaInfo.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmSchemaInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PropertiesDlg.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PropertiesDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Windows.Forms;
-using MaterialSkin.Controls;
+﻿using System.Windows.Forms;
 using Hypercube.Client;
+using MaterialSkin.Controls;
 
 namespace Hypercube.Control
 {
-    public partial class SettingsComponent : UserControl
+    public partial class SettingsPage
+        : TabPage
     {
-        public SettingsComponent()
+        public SettingsPage()
         {
             InitializeComponent();
             executionMethodSwitch.CheckedChanged += (s, e) => {

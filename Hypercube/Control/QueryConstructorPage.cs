@@ -1,4 +1,11 @@
-﻿using Hypercube.Client;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Hypercube.Client;
 using Hypercube.Client.Data;
 using Hypercube.Client.Data.Extractor;
 using Hypercube.Control.Filter;
@@ -8,29 +15,17 @@ using MdxBuilder.Entity;
 using MdxBuilder.Entity.Function.Set;
 using MdxBuilder.Entity.Operator.Unary;
 using MdxBuilder.Utils;
-using Microsoft.AnalysisServices.AdomdClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Crossjoin = MdxBuilder.Entity.Operator.Set.Crossjoin;
 using HypercubeClient = Hypercube.Client.Client;
-using Set = MdxBuilder.Entity.Set;
 
 namespace Hypercube.Control
 {
-    public partial class QueryConstructor : UserControl
+    public partial class QueryConstructorPage
+        : TabPage
     {
         public event Action<ExtractedData> DataCollected;
 
-        public QueryConstructor()
+        public QueryConstructorPage()
         {
             InitializeComponent();
             executeButton.Click += ExecuteButton_ClickAsync;

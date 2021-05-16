@@ -1,25 +1,19 @@
 ﻿using MaterialSkin;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace Hypercube.Forms
 {
-    public partial class BrowserForm : MaterialSkin.Controls.MaterialForm
+    public partial class BrowserForm
+        : MaterialForm
     {
         public BrowserForm()
         {
             InitializeComponent();
             InitializeMaterialSkinManager();
 
-            queryConstructor.DataCollected += cubeView.LoadData;
-            queryConstructor.DataCollected += fullnessMapComponent.LoadData;
+            queryConstructorPage.DataCollected += cubeView.LoadData;
+            queryConstructorPage.DataCollected
+                += methodsPage.fullnessMapComponent.LoadData;
         }
 
         private void InitializeMaterialSkinManager()

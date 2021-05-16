@@ -1,7 +1,7 @@
 ﻿
 namespace Hypercube.Control
 {
-    partial class ConnectionComponent
+    partial class ConnectionPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -136,16 +136,14 @@ namespace Hypercube.Control
             this.connectionLabel.TabIndex = 5;
             this.connectionLabel.Text = "Подключение к гиперкубу";
             // 
-            // ConnectionComponent
+            // ConnectionPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.connectionLabel);
             this.Controls.Add(this.serverTextBox);
             this.Controls.Add(this.connectButton);
             this.Controls.Add(this.catalogComboBox);
             this.Controls.Add(this.cubeComboBox);
-            this.Name = "ConnectionComponent";
+            this.Name = "ConnectionPage";
             this.Size = new System.Drawing.Size(640, 480);
             this.ResumeLayout(false);
             this.PerformLayout();

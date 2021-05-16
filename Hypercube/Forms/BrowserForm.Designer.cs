@@ -1,4 +1,6 @@
-﻿namespace Hypercube.Forms
+﻿using Hypercube.Control;
+
+namespace Hypercube.Forms
 {
     partial class BrowserForm
     {
@@ -31,36 +33,30 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
             this.mainTabControl = new MaterialSkin.Controls.MaterialTabControl();
-            this.connectionPage = new System.Windows.Forms.TabPage();
-            this.connectionComponent = new Hypercube.Control.ConnectionComponent();
-            this.constructorTabPage = new System.Windows.Forms.TabPage();
-            this.queryConstructor = new Hypercube.Control.QueryConstructor();
+            this.connectionPage = new ConnectionPage();
+            this.queryConstructorPage = new QueryConstructorPage();
             this.dataSetPage = new System.Windows.Forms.TabPage();
             this.cubeView = new Hypercube.Control.CubeView();
-            this.methodsPage = new System.Windows.Forms.TabPage();
-            this.settingsTabPage = new System.Windows.Forms.TabPage();
-            this.settingsComponent = new Hypercube.Control.SettingsComponent();
-            this.aboutTabPage = new System.Windows.Forms.TabPage();
-            this.aboutComponent = new Hypercube.Control.AboutComponent();
+            this.methodsPage = new MethodsPage();
+            this.settingsPage = new SettingsPage();
+            this.aboutPage = new AboutPage();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.fullnessMapComponent = new Hypercube.Control.FullnessMap.FullnessMapComponent();
             this.mainTabControl.SuspendLayout();
             this.connectionPage.SuspendLayout();
-            this.constructorTabPage.SuspendLayout();
+            this.queryConstructorPage.SuspendLayout();
             this.dataSetPage.SuspendLayout();
-            this.methodsPage.SuspendLayout();
-            this.settingsTabPage.SuspendLayout();
-            this.aboutTabPage.SuspendLayout();
+            this.settingsPage.SuspendLayout();
+            this.aboutPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.connectionPage);
-            this.mainTabControl.Controls.Add(this.constructorTabPage);
+            this.mainTabControl.Controls.Add(this.queryConstructorPage);
             this.mainTabControl.Controls.Add(this.dataSetPage);
             this.mainTabControl.Controls.Add(this.methodsPage);
-            this.mainTabControl.Controls.Add(this.settingsTabPage);
-            this.mainTabControl.Controls.Add(this.aboutTabPage);
+            this.mainTabControl.Controls.Add(this.settingsPage);
+            this.mainTabControl.Controls.Add(this.aboutPage);
             this.mainTabControl.Depth = 0;
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.ImageList = this.imageList;
@@ -74,7 +70,6 @@
             // 
             // connectionPage
             // 
-            this.connectionPage.Controls.Add(this.connectionComponent);
             this.connectionPage.ImageKey = "ConnectionIcon.png";
             this.connectionPage.Location = new System.Drawing.Point(4, 31);
             this.connectionPage.Name = "connectionPage";
@@ -84,33 +79,16 @@
             this.connectionPage.Text = "Подключение";
             this.connectionPage.UseVisualStyleBackColor = true;
             // 
-            // connectionComponent
+            // queryConstructorPage
             // 
-            this.connectionComponent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.connectionComponent.Location = new System.Drawing.Point(3, 3);
-            this.connectionComponent.Name = "connectionComponent";
-            this.connectionComponent.Size = new System.Drawing.Size(847, 533);
-            this.connectionComponent.TabIndex = 0;
-            // 
-            // constructorTabPage
-            // 
-            this.constructorTabPage.Controls.Add(this.queryConstructor);
-            this.constructorTabPage.ImageKey = "ConstructorIcon.png";
-            this.constructorTabPage.Location = new System.Drawing.Point(4, 31);
-            this.constructorTabPage.Name = "constructorTabPage";
-            this.constructorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.constructorTabPage.Size = new System.Drawing.Size(853, 539);
-            this.constructorTabPage.TabIndex = 2;
-            this.constructorTabPage.Text = "Конструктор";
-            this.constructorTabPage.UseVisualStyleBackColor = true;
-            // 
-            // queryConstructor
-            // 
-            this.queryConstructor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.queryConstructor.Location = new System.Drawing.Point(3, 3);
-            this.queryConstructor.Name = "queryConstructor";
-            this.queryConstructor.Size = new System.Drawing.Size(847, 533);
-            this.queryConstructor.TabIndex = 0;
+            this.queryConstructorPage.ImageKey = "ConstructorIcon.png";
+            this.queryConstructorPage.Location = new System.Drawing.Point(4, 31);
+            this.queryConstructorPage.Name = "queryConstructorPage";
+            this.queryConstructorPage.Padding = new System.Windows.Forms.Padding(3);
+            this.queryConstructorPage.Size = new System.Drawing.Size(853, 539);
+            this.queryConstructorPage.TabIndex = 2;
+            this.queryConstructorPage.Text = "Конструктор";
+            this.queryConstructorPage.UseVisualStyleBackColor = true;
             // 
             // dataSetPage
             // 
@@ -143,7 +121,6 @@
             // 
             // methodsPage
             // 
-            this.methodsPage.Controls.Add(this.fullnessMapComponent);
             this.methodsPage.ImageKey = "MethodIcon.png";
             this.methodsPage.Location = new System.Drawing.Point(4, 31);
             this.methodsPage.Name = "methodsPage";
@@ -153,45 +130,27 @@
             this.methodsPage.Text = "Методы";
             this.methodsPage.UseVisualStyleBackColor = true;
             // 
-            // settingsTabPage
+            // settingsPage
             // 
-            this.settingsTabPage.Controls.Add(this.settingsComponent);
-            this.settingsTabPage.ImageKey = "SettingsIcon.png";
-            this.settingsTabPage.Location = new System.Drawing.Point(4, 31);
-            this.settingsTabPage.Name = "settingsTabPage";
-            this.settingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTabPage.Size = new System.Drawing.Size(853, 539);
-            this.settingsTabPage.TabIndex = 3;
-            this.settingsTabPage.Text = "Настройки";
-            this.settingsTabPage.UseVisualStyleBackColor = true;
+            this.settingsPage.ImageKey = "SettingsIcon.png";
+            this.settingsPage.Location = new System.Drawing.Point(4, 31);
+            this.settingsPage.Name = "settingsPage";
+            this.settingsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.settingsPage.Size = new System.Drawing.Size(853, 539);
+            this.settingsPage.TabIndex = 3;
+            this.settingsPage.Text = "Настройки";
+            this.settingsPage.UseVisualStyleBackColor = true;
             // 
-            // settingsComponent
+            // aboutPage
             // 
-            this.settingsComponent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsComponent.Location = new System.Drawing.Point(3, 3);
-            this.settingsComponent.Name = "settingsComponent";
-            this.settingsComponent.Size = new System.Drawing.Size(847, 533);
-            this.settingsComponent.TabIndex = 0;
-            // 
-            // aboutTabPage
-            // 
-            this.aboutTabPage.Controls.Add(this.aboutComponent);
-            this.aboutTabPage.ImageKey = "AboutIcon.png";
-            this.aboutTabPage.Location = new System.Drawing.Point(4, 31);
-            this.aboutTabPage.Name = "aboutTabPage";
-            this.aboutTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.aboutTabPage.Size = new System.Drawing.Size(853, 539);
-            this.aboutTabPage.TabIndex = 0;
-            this.aboutTabPage.Text = "О программе";
-            this.aboutTabPage.UseVisualStyleBackColor = true;
-            // 
-            // aboutComponent
-            // 
-            this.aboutComponent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aboutComponent.Location = new System.Drawing.Point(3, 3);
-            this.aboutComponent.Name = "aboutComponent";
-            this.aboutComponent.Size = new System.Drawing.Size(847, 533);
-            this.aboutComponent.TabIndex = 0;
+            this.aboutPage.ImageKey = "AboutIcon.png";
+            this.aboutPage.Location = new System.Drawing.Point(4, 31);
+            this.aboutPage.Name = "aboutPage";
+            this.aboutPage.Padding = new System.Windows.Forms.Padding(3);
+            this.aboutPage.Size = new System.Drawing.Size(853, 539);
+            this.aboutPage.TabIndex = 0;
+            this.aboutPage.Text = "О программе";
+            this.aboutPage.UseVisualStyleBackColor = true;
             // 
             // imageList
             // 
@@ -203,14 +162,6 @@
             this.imageList.Images.SetKeyName(3, "AboutIcon.png");
             this.imageList.Images.SetKeyName(4, "DataSetIcon.png");
             this.imageList.Images.SetKeyName(5, "MethodIcon.png");
-            // 
-            // fullnessMapComponent
-            // 
-            this.fullnessMapComponent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fullnessMapComponent.Location = new System.Drawing.Point(3, 3);
-            this.fullnessMapComponent.Name = "fullnessMapComponent";
-            this.fullnessMapComponent.Size = new System.Drawing.Size(847, 533);
-            this.fullnessMapComponent.TabIndex = 0;
             // 
             // BrowserForm
             // 
@@ -224,11 +175,10 @@
             this.Text = "Hypercube";
             this.mainTabControl.ResumeLayout(false);
             this.connectionPage.ResumeLayout(false);
-            this.constructorTabPage.ResumeLayout(false);
+            this.queryConstructorPage.ResumeLayout(false);
             this.dataSetPage.ResumeLayout(false);
-            this.methodsPage.ResumeLayout(false);
-            this.settingsTabPage.ResumeLayout(false);
-            this.aboutTabPage.ResumeLayout(false);
+            this.settingsPage.ResumeLayout(false);
+            this.aboutPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -236,18 +186,13 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTabControl mainTabControl;
-        private System.Windows.Forms.TabPage aboutTabPage;
-        private Control.AboutComponent aboutComponent;
-        private System.Windows.Forms.TabPage connectionPage;
-        private System.Windows.Forms.TabPage constructorTabPage;
-        private System.Windows.Forms.TabPage settingsTabPage;
-        private Control.ConnectionComponent connectionComponent;
-        private Control.QueryConstructor queryConstructor;
-        private Control.SettingsComponent settingsComponent;
+        private AboutPage aboutPage;
+        private ConnectionPage connectionPage;
+        private QueryConstructorPage queryConstructorPage;
+        private SettingsPage settingsPage;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.TabPage dataSetPage;
-        private System.Windows.Forms.TabPage methodsPage;
+        private MethodsPage methodsPage;
         private Control.CubeView cubeView;
-        private Control.FullnessMap.FullnessMapComponent fullnessMapComponent;
     }
 }

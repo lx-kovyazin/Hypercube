@@ -1,6 +1,6 @@
 ﻿namespace Hypercube.Control
 {
-    partial class AboutComponent
+    partial class AboutPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -249,12 +249,10 @@
             this.organizationDataLabel.Text = "organizationDataLabel";
             this.organizationDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AboutComponent
+            // AboutPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainTableLayoutPanel);
-            this.Name = "AboutComponent";
+            this.Name = "AboutPage";
             this.Size = new System.Drawing.Size(640, 480);
             this.mainTableLayoutPanel.ResumeLayout(false);
             this.mainTableLayoutPanel.PerformLayout();
