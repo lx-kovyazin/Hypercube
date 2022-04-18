@@ -69,9 +69,11 @@ namespace Hypercube.Control
             {
                 if (e.GetDragMetaData(metaType) is IMetaModel model
                     && !(fixedListView.Items.Count > 0
-                        && fixedListView.Items.Cast<FixedMetaListViewItem>().Any(item => item.Model.Equals(model))))
+                        && fixedListView.Items
+                                        .Cast<FixedMetaListViewItem>()
+                                        .Any(item => item.Model.Equals(model))))
                 {
-                    e.Effect = DragDropEffects.Link;
+                    e.Effect = e.AllowedEffect;
                     break;
                 }
                 else
@@ -139,11 +141,16 @@ namespace Hypercube.Control
         private void FixedListView_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
-                fixedListView.SelectedItems.Cast<ListViewItem>().ToList().ForEach(item => item.Remove());
+                fixedListView.SelectedItems
+                             .Cast<ListViewItem>()
+                             .ToList()
+                             .ForEach(item => item.Remove());
         }
 
         private void FixedListView_Resize(object sender, EventArgs e)
-            => ResizeHeader();
+        {
+            ResizeHeader();
+        }
 
         private void Rotate(bool isLeft)
         {

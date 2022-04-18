@@ -55,6 +55,6 @@ namespace Hypercube.Client
             }
         }
 
-        public int ExecuteNonQuery() => Create().Start().ExecuteNonQuery().Stop(out _);
+        public int ExecuteNonQuery() => Create().ExecuteNonQuery();
     }
 }
